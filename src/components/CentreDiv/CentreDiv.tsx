@@ -14,6 +14,10 @@ const CentreDiv = (): React.ReactElement => {
         backgroundColor={divColor}
         margin="auto"
         display="flex"
+        transition={
+          '3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12)'
+        }
+        _hover={{ transform: 'scale(1.1)' }}
       >
         <Text display="flex" alignItems="center" margin="auto">
           Here is a centered div.

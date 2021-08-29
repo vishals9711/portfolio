@@ -22,9 +22,13 @@ interface NavItem {
   href?: string;
 }
 
+const cssObj = {
+  width: '100%',
+};
+
 const NavBar = (): React.ReactElement => {
   const { isOpen, onToggle } = useDisclosure();
-
+  const iconColor = useColorModeValue('white', 'gray.600');
   return (
     <Box>
       <Flex
@@ -46,7 +50,11 @@ const NavBar = (): React.ReactElement => {
           <IconButton
             onClick={onToggle}
             icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+              isOpen ? (
+                <CloseIcon w={3} h={3} color={iconColor} />
+              ) : (
+                <HamburgerIcon w={5} h={5} color={iconColor} />
+              )
             }
             variant={'ghost'}
             aria-label={'Toggle Navigation'}
@@ -92,17 +100,22 @@ const DesktopNav = () => {
   return (
     <Stack direction={'row'} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
+        <Box key={navItem.label} height={'28px'}>
           <Link
             p={2}
             href={navItem.href ?? '#'}
             fontSize={'md'}
             fontWeight={500}
             color={linkColor}
-            _hover={{
-              textDecoration: 'none',
-              color: linkHoverColor,
+            _after={{
+              transition: 'all ease-in-out .3s',
+              background: `none repeat scroll 0 0 ${linkHoverColor}`,
+              content: '""',
+              display: 'block',
+              height: '3px',
+              width: '0px',
             }}
+            _hover={{ _after: cssObj }}
           >
             {navItem.label}
           </Link>

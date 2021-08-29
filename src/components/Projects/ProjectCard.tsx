@@ -40,6 +40,12 @@ const ProjectCard = (props: IProjectCard): React.ReactElement => {
         rounded={'lg'}
         p={6}
         textAlign={'center'}
+        transition={
+          '3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12)'
+        }
+        _hover={{
+          transform: 'scale(1.05)',
+        }}
       >
         <Heading fontSize={'2xl'} fontFamily={'body'} height="56px">
           {projectName}
