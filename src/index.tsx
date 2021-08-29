@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { App } from './app/App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
-
+import './index.css';
 ReactDOM.render(
   <React.StrictMode>
     <ColorModeScript />

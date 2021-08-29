@@ -5,9 +5,16 @@ import { PROJECT_DATA } from './ProjectsData';
 
 const Projects = (): React.ReactElement => {
   return (
-    <Box w="100%" display="flex" flexDirection="column">
+    <Box
+      w="100%"
+      display="flex"
+      flexDirection="column"
+      id="projects"
+      mt="0"
+      pt="8"
+    >
       <Box>
-        <Heading as="h3" size="xl" marginBottom="16px" m="auto">
+        <Heading as="h3" size="xl" marginBottom="32px" mx="auto">
           Projects
         </Heading>
       </Box>

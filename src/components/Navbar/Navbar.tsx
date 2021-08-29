@@ -28,14 +28,14 @@ const NavBar = (): React.ReactElement => {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue('white', 'gray.800')}
-        color={useColorModeValue('gray.600', 'white')}
+        bg={useColorModeValue('gray.800', 'white')}
+        color={useColorModeValue('white', 'gray.600')}
         minH={'60px'}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
         borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.200', 'gray.900')}
+        borderColor={useColorModeValue('gray.900', 'gray.200')}
         align={'center'}
       >
         <Flex
@@ -56,9 +56,9 @@ const NavBar = (): React.ReactElement => {
           <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}
+            color={useColorModeValue('white', 'gray.800')}
           >
-            VS.
+            VS
           </Text>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -86,8 +86,8 @@ const NavBar = (): React.ReactElement => {
 export default NavBar;
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
+  const linkColor = useColorModeValue('gray.200', 'gray.600');
+  const linkHoverColor = useColorModeValue('white', 'gray.800');
 
   return (
     <Stack direction={'row'} spacing={4}>
@@ -115,7 +115,7 @@ const DesktopNav = () => {
 const MobileNav = () => {
   return (
     <Stack
-      bg={useColorModeValue('white', 'gray.800')}
+      bg={useColorModeValue('gray.800', 'white')}
       p={4}
       display={{ md: 'none' }}
     >
@@ -143,7 +143,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
       >
         <Text
           fontWeight={600}
-          color={useColorModeValue('gray.600', 'gray.200')}
+          color={useColorModeValue('gray.200', 'gray.600')}
         >
           {label}
         </Text>
@@ -164,7 +164,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           pl={4}
           borderLeft={1}
           borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.200', 'gray.700')}
+          borderColor={useColorModeValue('gray.700', 'gray.200')}
           align={'start'}
         >
           {children &&
@@ -182,14 +182,14 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Projects',
-    href: '#',
+    href: '#projects',
   },
   {
     label: 'Skills',
-    href: '#',
+    href: '#skills',
   },
   {
     label: 'Contact',
-    href: '#',
+    href: '#contact',
   },
 ];

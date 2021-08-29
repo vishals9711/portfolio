@@ -12,7 +12,9 @@ const Skills = (): React.ReactElement => {
       display="flex"
       flexDirection="column"
       backgroundColor={backgroundColor}
-      py="4"
+      py="8"
+      minH="400px"
+      id="skills"
     >
       <Box>
         <Heading
@@ -27,7 +29,13 @@ const Skills = (): React.ReactElement => {
       </Box>
       <Flex justifyContent="space-around" flexWrap="wrap" maxW="800px" m="auto">
         {SKILLS_ARRAY.map((skill, index) => (
-          <Badge fontSize="0.8em" m="4" key={index}>
+          <Badge
+            fontSize="0.8em"
+            m="4"
+            key={index}
+            color={divColor}
+            backgroundColor={backgroundColor}
+          >
             {' '}
             {skill}
           </Badge>

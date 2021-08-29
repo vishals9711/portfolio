@@ -29,6 +29,7 @@
     "max-depth": "error",
     "max-nested-callbacks": "error",
     "max-statements": ["error", 60],
-    "@typescript-eslint/ban-ts-comment": "off"
+    "@typescript-eslint/ban-ts-comment": "off",
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }]
   }
 }

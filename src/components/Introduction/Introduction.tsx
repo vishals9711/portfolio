@@ -4,7 +4,7 @@ import React from 'react';
 const Introduction = (): React.ReactElement => {
   return (
     <Box>
-      <Heading marginY="16px" as="h1" size="3xl">
+      <Heading marginY="32px" as="h1" size="3xl">
         Hi, I am Vishal Sharma.
       </Heading>
       <Heading as="h3" size="xl" marginBottom="16px">

@@ -5,7 +5,7 @@ const CentreDiv = (): React.ReactElement => {
   const backgroundColor = useColorModeValue('#1a202c', '#ffffff');
   const divColor = useColorModeValue('#ffffff', '#1a202c');
   return (
-    <Box w="100%" h="800px" display="flex" backgroundColor={backgroundColor}>
+    <Box w="100%" h="600px" display="flex" backgroundColor={backgroundColor}>
       <Box
         w="200px"
         h="200px"
