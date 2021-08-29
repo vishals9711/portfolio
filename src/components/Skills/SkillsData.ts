@@ -1,4 +1,4 @@
-export const SKILLS: Array<string> = [
+export const SKILLS_ARRAY: Array<string> = [
   'ReactJS',
   'Angular',
   'HTML/CSS',

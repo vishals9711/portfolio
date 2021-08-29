@@ -1,7 +1,7 @@
 import { Box, Heading, Flex, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 import { Badge } from '@chakra-ui/react';
-import { SKILLS } from './Skills';
+import { SKILLS_ARRAY } from './SkillsData';
 const Skills = (): React.ReactElement => {
   const backgroundColor = useColorModeValue('#1a202c', '#ffffff');
   const divColor = useColorModeValue('#ffffff', '#1a202c');
@@ -26,7 +26,7 @@ const Skills = (): React.ReactElement => {
         </Heading>
       </Box>
       <Flex justifyContent="space-around" flexWrap="wrap" maxW="800px" m="auto">
-        {SKILLS.map((skill, index) => (
+        {SKILLS_ARRAY.map((skill, index) => (
           <Badge fontSize="0.8em" m="4" key={index}>
             {' '}
             {skill}
