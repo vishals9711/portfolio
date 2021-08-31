@@ -27,7 +27,7 @@ const Skills = (): React.ReactElement => {
           Skills
         </Heading>
       </Box>
-      <Flex justifyContent="space-around" flexWrap="wrap" maxW="800px" m="auto">
+      <Flex justifyContent="space-around" flexWrap="wrap" maxW="600px" m="auto">
         {SKILLS_ARRAY.map((skill, index) => (
           <Badge
             fontSize="0.8em"
