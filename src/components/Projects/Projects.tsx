@@ -2,6 +2,7 @@ import { Box, Flex, Heading } from '@chakra-ui/react';
 import React from 'react';
 import ProjectCard from './ProjectCard';
 import { PROJECT_DATA } from './ProjectsData';
+import { Fade } from 'react-reveal';
 
 const Projects = (): React.ReactElement => {
   return (
@@ -20,7 +21,9 @@ const Projects = (): React.ReactElement => {
       </Box>
       <Flex justifyContent="space-around" flexWrap="wrap">
         {PROJECT_DATA.map((data, index) => (
-          <ProjectCard {...data} key={index} />
+          <Fade key={index} collapse bottom delay={index * 500}>
+            <ProjectCard {...data} key={index} />
+          </Fade>
         ))}
       </Flex>
     </Box>

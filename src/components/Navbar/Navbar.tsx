@@ -29,6 +29,8 @@ const cssObj = {
 const NavBar = (): React.ReactElement => {
   const { isOpen, onToggle } = useDisclosure();
   const iconColor = useColorModeValue('white', 'gray.600');
+  const iconBgColor = useColorModeValue('gray.600', 'white');
+  const colorSwitch = useColorModeValue('whitealpha.200', 'gray.100');
   return (
     <Box>
       <Flex
@@ -58,6 +60,7 @@ const NavBar = (): React.ReactElement => {
             }
             variant={'ghost'}
             aria-label={'Toggle Navigation'}
+            _hover={{ background: iconBgColor }}
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
@@ -80,7 +83,10 @@ const NavBar = (): React.ReactElement => {
           direction={'row'}
           spacing={6}
         >
-          <ColorModeSwitcher justifySelf="flex-end" />
+          <ColorModeSwitcher
+            justifySelf="flex-end"
+            _hover={{ background: colorSwitch }}
+          />
         </Stack>
       </Flex>
 

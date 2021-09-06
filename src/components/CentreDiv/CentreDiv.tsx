@@ -1,5 +1,7 @@
 import React from 'react';
 import { Box, Text, useColorModeValue } from '@chakra-ui/react';
+import Flash from 'react-reveal/Flash';
+
 const CentreDiv = (): React.ReactElement => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
   const backgroundColor = useColorModeValue('#1a202c', '#ffffff');
@@ -20,7 +22,9 @@ const CentreDiv = (): React.ReactElement => {
         _hover={{ transform: 'scale(1.1)' }}
       >
         <Text display="flex" alignItems="center" margin="auto">
-          Here is a centered div.
+          <Flash effect="fadeInUp" delay={2000}>
+            Here is a centered div.
+          </Flash>
         </Text>
       </Box>
     </Box>

@@ -17,11 +17,12 @@ export const PROJECT_DATA: Array<IProjectCard> = [
     languages: ['Ionic', 'ExpressJS', 'Typescript', 'MYSQL'],
   },
   {
-    projectName: 'Car Black Box',
+    projectName: 'Covid Dashboard',
     projectDesc:
-      'A program that tracks the vitals of a vehicle which can be used for investagation incase of an accident, additionally can also be used as a speed enforcer.',
+      'A covid dashboard outlining the different trends and numbers for different talukas and districts, built for the state of Goa, India..',
     githubLink: 'https://github.com/vishals9711/black_box',
-    languages: ['Angular', 'Google Maps SDK', 'IBM Bluemix'],
+    hostedLink: 'https://coviddashboardgoa.sygence.in/',
+    languages: ['Angular', 'Ant Design', 'Swimlane Charts'],
   },
   {
     projectName: 'Power, Energy and Machine Analyzer',
