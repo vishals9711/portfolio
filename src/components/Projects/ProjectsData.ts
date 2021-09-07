@@ -2,6 +2,14 @@ import { IProjectCard } from './ProjectCard';
 
 export const PROJECT_DATA: Array<IProjectCard> = [
   {
+    projectName: 'Covid Dashboard',
+    projectDesc:
+      'A covid dashboard outlining the different trends and numbers for different talukas and districts, built for the state of Goa, India.',
+    githubLink: 'https://github.com/vishals9711/black_box',
+    hostedLink: 'https://coviddashboardgoa.sygence.in/',
+    languages: ['Angular', 'Ant Design', 'Swimlane Charts'],
+  },
+  {
     projectName: 'Vaccination Slot Alert',
     projectDesc:
       'A web portal that can create Vaccination slot Alerts in India and notify via email or Text SMS when slots open up.',
@@ -15,14 +23,6 @@ export const PROJECT_DATA: Array<IProjectCard> = [
       'A PWA wherein people can reserve table at a restaurant, order food, pay bills thereby reducing contact and saving time for the restaurant and the customer.',
     githubLink: 'https://github.com/vishals9711/FoodReservation',
     languages: ['Ionic', 'ExpressJS', 'Typescript', 'MYSQL'],
-  },
-  {
-    projectName: 'Covid Dashboard',
-    projectDesc:
-      'A covid dashboard outlining the different trends and numbers for different talukas and districts, built for the state of Goa, India..',
-    githubLink: 'https://github.com/vishals9711/black_box',
-    hostedLink: 'https://coviddashboardgoa.sygence.in/',
-    languages: ['Angular', 'Ant Design', 'Swimlane Charts'],
   },
   {
     projectName: 'Power, Energy and Machine Analyzer',
