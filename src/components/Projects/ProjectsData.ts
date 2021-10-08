@@ -20,7 +20,7 @@ export const PROJECT_DATA: Array<IProjectCard> = [
   {
     projectName: 'Food Reservation',
     projectDesc:
-      'A PWA wherein people can reserve table at a restaurant, order food, pay bills thereby reducing contact and saving time for the restaurant and the customer.',
+      'A PWA wherein people can reserve tables at a restaurant, order food, pay bills thereby reducing contact and saving time for the restaurant and the customer.',
     githubLink: 'https://github.com/vishals9711/FoodReservation',
     languages: ['Ionic', 'ExpressJS', 'Typescript', 'MYSQL'],
   },
