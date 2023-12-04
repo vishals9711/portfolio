@@ -1,59 +1,67 @@
-This project was bootstrapped with
-[Create React App](https://github.com/facebook/create-react-app).
+# Portfolio Website - Astro
 
-## Available Scripts
+Just change `src/data/info.ts` to get your personal portfolio.
 
-In the project directory, you can run:
+## portfolio template for Developers!
 
-### `yarn start`
+![Feature Image](./public/assets/images/astro-portfolio.png)
 
-Runs the app in the development mode.<br /> Open
-[http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🚀 Project Structure
 
-The page will reload if you make edits.<br /> You will also see any lint errors
-in the console.
+Inside of your Astro project, you'll see the following folders and files:
 
-### `yarn test`
+```
+/
+├── public/
+│   ├── assets
+│   │   ├── fonts
+|   |   └── images
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── home/
+|   |   └── general/
+|   |       ├── Header.astro
+|   |       ├── Footer.astro
+|   |       └── ...
+│   ├── data/
+│   ├── layouts/
+│   |   |── Layout.astro
+│   |   └── ...
+│   ├── pages/
+│   |   ├── peojects.astro
+│   |   ├── index.astro
+│   ├── styles/
+│   |   |── custom-styles.css
+│   |   |── fonts.css
+│   |   └── styles.css
+│   ├── types/
+│   ├── utils/
+├── package.json
+└── ...
+```
 
-Launches the test runner in the interactive watch mode.<br /> See the section
-about
-[running tests](https://facebook.github.io/create-react-app/docs/running-tests)
-for more information.
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-### `yarn build`
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-Builds the app for production to the `build` folder.<br /> It correctly bundles
-React in production mode and optimizes the build for the best performance.
+Any static assets, like images, can be placed in the `public/assets` directory.
 
-The build is minified and the filenames include the hashes.<br /> Your app is
-ready to be deployed!
+Your personal data would be go on `src/data` directory.
 
-See the section about
-[deployment](https://facebook.github.io/create-react-app/docs/deployment) for
-more information.
+## 🧞 Commands
 
-### `yarn eject`
+All commands are run from the root of the project, from a terminal:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `npm install`          | Installs dependencies                            |
+| `npm run dev`          | Starts local dev server at `localhost:3000`      |
+| `npm run build`        | Build your production site to `./dist/`          |
+| `npm run preview`      | Preview your build locally, before deploying     |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro --help` | Get help using the Astro CLI                     |
 
-If you aren’t satisfied with the build tool and configuration choices, you can
-`eject` at any time. This command will remove the single build dependency from
-your project.
+## 👀 Want to learn more?
 
-Instead, it will copy all the configuration files and the transitive
-dependencies (webpack, Babel, ESLint, etc) right into your project so you have
-full control over them. All of the commands except `eject` will still work, but
-they will point to the copied scripts so you can tweak them. At this point
-you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for
-small and middle deployments, and you shouldn’t feel obligated to use this
-feature. However we understand that this tool wouldn’t be useful if you couldn’t
-customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feel free to check [Astro documentation](https://docs.astro.build) or jump into Astro [Discord server](https://astro.build/chat).
