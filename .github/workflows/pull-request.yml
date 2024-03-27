@@ -20,5 +20,5 @@ jobs:
       - name: Run Different Test Script (Pull Request)
         working-directory: .
         run: |
-          npm install
+          npm install --force
           npm run build
