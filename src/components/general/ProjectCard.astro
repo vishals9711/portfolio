@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+
+interface ProjectDetails {
+  title: string;
+  img: string; // Assuming img is the URL or path to the image
+  desc: string;
+  url: string;
+  badge: string; // You might want to specify a more specific type depending on the actual data
+  target?: string; // Optional property with a default value
+}
+
+// Usage example:
+const { title, img, desc, url, badge, target = "_blank" } = Astro.props;
+
+// const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
+const tag_url = "https://astro.build/tags";
+---
+
+<div
+  class="rounded-xl bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%] p-4 border-solid border-4 border-blue/100 dark:border-blue/50"
+>
+  <a href={url} target={target}>
+    <div class="hero-content flex-col md:flex-row">
+      {
+        img && (
+          <Image
+            src={img}
+            width={750}
+            height={422}
+            format="webp"
+            alt={title}
+            class="max-w-full md:max-w-[13rem] rounded-lg"
+          />
+        )
+      }
+      <div class="grow w-full">
+        <h1 class="text-xl font-bold">
+          {title}
+        </h1>
+        <p class="py-1 text-1xl dark:text-gray">{desc}</p>
+        <!-- <div class="card-actions justify-end">
+          {
+            tags &&
+              tags.map((tag) => (
+                <a href={`${tag_url}/${tag}`} class="badge badge-outline">
+                  {tag}
+                </a>
+              ))
+          }
+        </div> -->
+      </div>
+    </div>
+  </a>
+</div>
