@@ -1,20 +1,17 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import robotsTxt from "astro-robots-txt";
-import sitemap from "@astrojs/sitemap";
+import icon from "astro-icon";
+import { remarkReadingTime } from "./remark-reading-time.mjs";
+import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-portfolio-uzair.vercel.app",
-  integrations: [
-    tailwind(),
-    sitemap({
-      changefreq: "weekly",
-      priority: 0.7,
-      lastmod: new Date(),
-      entryLimit: 10000,
-    }),
-    robotsTxt(),
-  ],
-  // experimental: { assets: true },
+  integrations: [tailwind(), icon()],
+  output: "server",
+  adapter: node({
+    mode: "standalone",
+  }),
+  markdown: {
+    remarkPlugins: [remarkReadingTime],
+  },
 });
