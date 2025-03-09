@@ -5,16 +5,16 @@ import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 import { remarkReadingTime } from "./remark-reading-time.mjs";
 
+import vercel from "@astrojs/vercel";
+
 // https://astro.build/config
 export default defineConfig({
-	integrations: [tailwind(), icon({
-		iconDir: "src/assets/icons",
-	  }), react()],
-	output: "server",
-	adapter: node({
-		mode: "standalone",
-	}),
-	markdown: {
-		remarkPlugins: [remarkReadingTime],
-	},
+    integrations: [tailwind(), icon({
+        iconDir: "src/assets/icons",
+      }), react()],
+    output: "server",
+    adapter: vercel(),
+    markdown: {
+        remarkPlugins: [remarkReadingTime],
+    },
 });
