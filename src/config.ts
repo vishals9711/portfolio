@@ -37,19 +37,19 @@ export const socialLinks: SocialLink[] = [
 	{
 		title: "GitHub",
 		url: "https://github.com/vishals9711",
-		icon: "mdi:github",
+		icon: "github",
 		external: true,
 	},
 	{
 		title: "LinkedIn",
 		url: "https://linkedin.com/in/vishals9711",
-		icon: "mdi:linkedin",
+		icon: "linkedin",
 		external: true,
 	},
 	{
 		title: "Mail",
 		url: "mailto:vishalsharma1907@gmail.com",
-		icon: "mdi:email",
+		icon: "email",
 	},
 ];
 

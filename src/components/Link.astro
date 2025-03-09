@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
 interface Props {
 	text: string;
 	href: string;
@@ -18,14 +18,14 @@ const { text, href, external, noAnchor } = Astro.props;
       class="flex items-center gap-2 opacity-60 group-hover:opacity-30 hover:!opacity-60 transition-opacity"
     >
       <div class="rotate-45">
-        <Icon name="mdi:arrow-up" />
+        <Icon name="arrow-up" />
       </div>
       <span>{text}</span>
     </a>
   ) : (
     <div class="flex items-center gap-2 opacity-60 group-hover:opacity-30 hover:!opacity-60 transition-opacity">
       <div class="rotate-45">
-        <Icon name="mdi:arrow-up" />
+        <Icon name="arrow-up" />
       </div>
       <span>{text}</span>
     </div>

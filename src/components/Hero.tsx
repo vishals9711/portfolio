@@ -23,7 +23,7 @@ export default function Hero({
 	links,
 }: HeroProps) {
 	return (
-		<section className="relative min-h-[85vh] flex items-center mt-10">
+		<section className="relative min-h-[85vh] flex items-center justify-center py-16 mt-10">
 			{/* Background effects */}
 			<div className="absolute inset-0 hero-gradient -z-10" />
 			<div className="absolute top-20 left-[5%] w-[30vw] max-w-md aspect-square rounded-full bg-gradient-to-r from-purple-500/30 to-transparent dark:from-purple-500/30 light:from-purple-600/15 blur-3xl -z-10" />
@@ -68,55 +68,61 @@ export default function Hero({
 				}}
 			/>
 
-			<div className="container px-4 mx-auto grid md:grid-cols-2 gap-12 items-center">
-				{/* Text content */}
-				<FadeInLeft className="order-2 md:order-1">
-					<h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 tracking-tight">
-						<span className="gradient-heading">Hello, I'm</span> {name}
-					</h1>
-					<h2 className="text-xl md:text-2xl mb-6 text-muted-foreground font-light">
-						{role}
-					</h2>
+			<div className="container mx-auto px-4">
+				<div className="flex flex-col md:flex-row items-center justify-center max-w-5xl mx-auto gap-12 lg:gap-16">
+					{/* Text content */}
+					<div className="w-full md:w-1/2 text-center md:text-left">
+						<FadeInLeft>
+							<h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 tracking-tight">
+								<span className="gradient-heading">Hello, I'm <br /> </span> {name}
+							</h1>
+							<h2 className="text-xl md:text-2xl mb-6 text-muted-foreground font-light">
+								{role}
+							</h2>
 
-					<p className="text-lg max-w-md mb-8 text-muted-foreground/90">
-						{description}
-					</p>
+							<p className="text-lg mx-auto md:mx-0 max-w-md mb-8 text-muted-foreground/90">
+								{description}
+							</p>
 
-					<div className="flex flex-wrap gap-4">
-						{links.map((link, index) => (
-							<Button
-								key={index}
-								variant={index === 0 ? "gradient" : "glass"}
-								size="lg"
-								asChild
-								className={
-									index === 0 ? "light:text-white light:font-semibold" : ""
-								}
-							>
-								<a href={link.url} target={link.external ? "_blank" : "_self"}>
-									{link.title}
-								</a>
-							</Button>
-						))}
+							<div className="flex flex-wrap justify-center md:justify-start gap-4">
+								{links.map((link, index) => (
+									<Button
+										key={index}
+										variant={index === 0 ? "gradient" : "glass"}
+										size="lg"
+										asChild
+										className={
+											index === 0 ? "light:text-white light:font-semibold" : ""
+										}
+									>
+										<a href={link.url} target={link.external ? "_blank" : "_self"}>
+											{link.title}
+										</a>
+									</Button>
+								))}
+							</div>
+						</FadeInLeft>
 					</div>
-				</FadeInLeft>
 
-				{/* Image or illustration */}
-				<FadeInRight className="order-1 md:order-2 flex justify-center">
-					<motion.div
-						className="relative w-64 h-64 sm:w-80 sm:h-80"
-						whileHover={{ rotate: 5, scale: 1.05 }}
-						transition={{ type: "spring", stiffness: 400, damping: 10 }}
-					>
-						<div className="glass absolute inset-0 rounded-3xl" />
-						<img
-							src={image}
-							alt={name}
-							className="relative z-10 w-full h-full object-cover rounded-3xl p-3"
-						/>
-						<div className="absolute -z-10 inset-4 bg-gradient-to-br from-purple-500/50 to-pink-600/50 rounded-3xl blur-xl" />
-					</motion.div>
-				</FadeInRight>
+					{/* Image or illustration */}
+					<div className="w-full md:w-1/2 flex justify-center">
+						<FadeInRight>
+							<motion.div
+								className="relative w-64 h-64 sm:w-80 sm:h-80"
+								whileHover={{ rotate: 5, scale: 1.05 }}
+								transition={{ type: "spring", stiffness: 400, damping: 10 }}
+							>
+								<div className="glass absolute inset-0 rounded-3xl" />
+								<img
+									src={image}
+									alt={name}
+									className="relative z-10 w-full h-full object-cover rounded-3xl p-3"
+								/>
+								<div className="absolute -z-10 inset-4 bg-gradient-to-br from-purple-500/50 to-pink-600/50 rounded-3xl blur-xl" />
+							</motion.div>
+						</FadeInRight>
+					</div>
+				</div>
 			</div>
 		</section>
 	);

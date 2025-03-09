@@ -25,11 +25,9 @@
 		"@radix-ui/react-separator": "^1.1.2",
 		"@radix-ui/react-slot": "^1.1.2",
 		"astro": "^5.4.2",
-		"astro-icon": "^1.1.5",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"framer-motion": "^12.4.10",
-		"lucide-react": "^0.479.0",
 		"marked": "^15.0.6",
 		"mdast-util-to-string": "^4.0.0",
 		"react": "^19.0.0",
@@ -42,7 +40,9 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
+		"@iconify-icon/react": "^2.3.0",
 		"@iconify-json/mdi": "^1.2.2",
-		"@tailwindcss/typography": "^0.5.16"
+		"@tailwindcss/typography": "^0.5.16",
+		"astro-icon": "^1.1.5"
 	}
 }

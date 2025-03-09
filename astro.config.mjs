@@ -7,7 +7,9 @@ import { remarkReadingTime } from "./remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [tailwind(), icon(), react()],
+	integrations: [tailwind(), icon({
+		iconDir: "src/assets/icons",
+	  }), react()],
 	output: "server",
 	adapter: node({
 		mode: "standalone",

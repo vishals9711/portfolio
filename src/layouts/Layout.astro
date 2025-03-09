@@ -1,11 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 import { identity, navBarLinks } from "../config";
 import type { SEOInfo } from "../types/config";
 import "../styles/globals.css";
 import PageTransition from "../components/ui/page-transition";
 import ThemeSwitch from "../components/ui/theme-switch";
+
 
 interface Props {
 	seo: SEOInfo;
@@ -132,7 +132,7 @@ const pathname = Astro.url.pathname;
                 class="block p-2 opacity-60 hover:opacity-100 transition-all duration-300 hover:scale-110"
                 aria-label="Email"
               >
-                <Icon name="mdi:email" width={20} height={20} />
+                <!-- <IconWrapper name="mdi:email" width={20} height={20} /> -->
               </a>
             </div>
           </div>

@@ -44,9 +44,6 @@ importers:
       astro:
         specifier: ^5.4.2
         version: 5.4.2(@types/node@22.10.5)(jiti@1.21.7)(rollup@4.30.1)(typescript@5.7.2)(yaml@2.7.0)
-      astro-icon:
-        specifier: ^1.1.5
-        version: 1.1.5
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -56,9 +53,6 @@ importers:
       framer-motion:
         specifier: ^12.4.10
         version: 12.4.10(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      lucide-react:
-        specifier: ^0.479.0
-        version: 0.479.0(react@19.0.0)
       marked:
         specifier: ^15.0.6
         version: 15.0.6
@@ -90,12 +84,18 @@ importers:
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
+      '@iconify-icon/react':
+        specifier: ^2.3.0
+        version: 2.3.0(react@19.0.0)
       '@iconify-json/mdi':
         specifier: ^1.2.2
         version: 1.2.2
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@3.4.17)
+      astro-icon:
+        specifier: ^1.1.5
+        version: 1.1.5
 
 packages:
 
@@ -503,6 +503,11 @@ packages:
 
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
+
+  '@iconify-icon/react@2.3.0':
+    resolution: {integrity: sha512-7at8wGF+igiCS2XMaIrkZokD0zxz0pNa5SZn5tJAkZMJezeJlYiFXI5rYkiEpUpMaNYhYTqGLB90I/0sKJZkUw==}
+    peerDependencies:
+      react: '>=16'
 
   '@iconify-json/mdi@1.2.2':
     resolution: {integrity: sha512-84aznJXzfGdbOXGe8xB7E5uNAb7Yo5IABwTgq2X3kczb819qZeS9eL31bTVn7wJdCLK5ieaoUc2GTS3QYIkJ6g==}
@@ -1817,6 +1822,9 @@ packages:
     resolution: {integrity: sha512-FtwrG/euBzaEjYeRqOgly7G0qviiXoJWnvEH2Z1plBdXgbyjv34pHTSb9zoeHMyDy33+DWy5Wt9Wo+TURtOYSQ==}
     engines: {node: '>= 0.8'}
 
+  iconify-icon@2.3.0:
+    resolution: {integrity: sha512-C0beI9oTDxQz6voI5CKl7MiJf0Lw4UU8K4G4t6pcUDClLmCvuMOpcvd8MAztQ2SfoH0iv7WHdxBFjekKPFKH2Q==}
+
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
@@ -1965,11 +1973,6 @@ packages:
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
-
-  lucide-react@0.479.0:
-    resolution: {integrity: sha512-aBhNnveRhorBOK7uA4gDjgaf+YlHMdMhQ/3cupk6exM10hWlEU+2QtWYOfhXhjAsmdb6LeKR+NZnow4UxRRiTQ==}
-    peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -3566,6 +3569,11 @@ snapshots:
 
   '@floating-ui/utils@0.2.9': {}
 
+  '@iconify-icon/react@2.3.0(react@19.0.0)':
+    dependencies:
+      iconify-icon: 2.3.0
+      react: 19.0.0
+
   '@iconify-json/mdi@1.2.2':
     dependencies:
       '@iconify/types': 2.0.0
@@ -5013,6 +5021,10 @@ snapshots:
       statuses: 2.0.1
       toidentifier: 1.0.1
 
+  iconify-icon@2.3.0:
+    dependencies:
+      '@iconify/types': 2.0.0
+
   iconv-lite@0.6.3:
     dependencies:
       safer-buffer: 2.1.2
@@ -5128,10 +5140,6 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
-
-  lucide-react@0.479.0(react@19.0.0):
-    dependencies:
-      react: 19.0.0
 
   magic-string@0.30.17:
     dependencies:

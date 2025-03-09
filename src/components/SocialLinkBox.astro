@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
 import type { SocialLink } from "../types/config";
 
 type Props = SocialLink;
@@ -16,7 +16,7 @@ const { title, url, icon, external } = Astro.props;
   <div class="flex items-center justify-between w-full">
     <p>{title}</p>
     <div class="rotate-45">
-      <Icon name="mdi:arrow-up" />
+      <Icon name="arrow-up" />
     </div>
   </div>
 </a>
