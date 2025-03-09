@@ -1,19 +1,60 @@
 ---
+import ProjectCard from "../components/ProjectCard";
+import { FadeInStagger } from "../components/ui/motion-wrapper";
+import { identity, projectsPageContent } from "../config";
 import Layout from "../layouts/Layout.astro";
-import { projectsPageContent } from "../config";
-import ProjectCard from "../components/ProjectCard.astro";
+
+// Add sample tags to projects
+const projectsWithTags = projectsPageContent.projects.map((project) => ({
+	...project,
+	tags: ["Web", "UI/UX", "Frontend"],
+}));
 ---
 
 <Layout seo={projectsPageContent.seo}>
-  <section class="mt-10 max-w-2xl mx-auto px-6">
-    <h1 class="font-bold text-3xl mb-1">Projects</h1>
-    <p class="opacity-60 mb-10">{projectsPageContent.subtitle}</p>
-    <div class="grid grid-cols-1 group">
-      {
-        projectsPageContent.projects.map((project) => (
-          <ProjectCard {...project} />
-        ))
-      }
+  <section class="py-20 relative">
+    <!-- Background glow effects using pseudo-elements -->
+    <div class="container px-4 mx-auto">
+      <div class="max-w-2xl mx-auto text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-heading">Projects</h1>
+        <p class="text-lg text-muted-foreground">{projectsPageContent.subtitle}</p>
+      </div>
+      
+      <!-- Container-constrained background elements -->
+      <div class="absolute top-40 left-[5%] w-[30vw] max-w-md aspect-square rounded-[40%] bg-gradient-radial from-purple-500/15 via-purple-500/5 to-transparent blur-3xl -z-10 dark:from-purple-500/20 light:from-purple-600/10 light:via-purple-600/5"></div>
+      <div class="absolute bottom-40 right-[5%] w-[30vw] max-w-md aspect-square rounded-[40%] bg-gradient-radial from-pink-500/15 via-pink-500/5 to-transparent blur-3xl -z-10 dark:from-pink-500/20 light:from-pink-600/10 light:via-pink-600/5"></div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {projectsWithTags.map((project, index) => (
+          <FadeInStagger client:visible delay={index * 0.1}>
+            <ProjectCard 
+              title={project.title}
+              description={project.description}
+              image={project.image}
+              year={project.year}
+              url={project.url}
+              tags={project.tags}
+              glass={index % 2 === 0}
+              gradient={index % 2 !== 0}
+            />
+          </FadeInStagger>
+        ))}
+      </div>
+      
+      <!-- Contact CTA -->
+      <div class="mt-24 glass rounded-3xl p-8 md:p-12 text-center max-w-4xl mx-auto relative">
+        <div class="absolute -z-10 inset-0 bg-gradient-to-br from-purple-500/5 via-pink-500/5 to-transparent dark:from-purple-500/5 dark:to-pink-600/5 light:from-purple-600/5 light:via-pink-600/3 light:to-transparent rounded-3xl"></div>
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Have a project in mind?</h2>
+        <p class="text-lg text-muted-foreground/90 mb-8 max-w-xl mx-auto">
+          I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
+        </p>
+        <a 
+          href={`mailto:${identity.email}`}
+          class="inline-flex items-center justify-center h-11 px-8 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-medium shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:-translate-y-1 transition-all duration-300"
+        >
+          Get In Touch
+        </a>
+      </div>
     </div>
   </section>
 </Layout>

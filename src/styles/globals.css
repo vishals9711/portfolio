@@ -1,0 +1,224 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 240 10% 3.9%;
+		--foreground: 0 0% 98%;
+
+		--card: 240 10% 3.9%;
+		--card-foreground: 0 0% 98%;
+
+		--popover: 240 10% 3.9%;
+		--popover-foreground: 0 0% 98%;
+
+		--primary: 263 90% 51%;
+		--primary-foreground: 0 0% 98%;
+
+		--secondary: 240 3.7% 15.9%;
+		--secondary-foreground: 240 5% 64.9%;
+
+		--muted: 240 3.7% 15.9%;
+		--muted-foreground: 240 5% 64.9%;
+
+		--accent: 240 3.7% 15.9%;
+		--accent-foreground: 0 0% 98%;
+
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 0 0% 98%;
+
+		--border: 240 3.7% 15.9%;
+		--input: 240 3.7% 15.9%;
+		--ring: 240 4.9% 83.9%;
+
+		--radius: 0.5rem;
+	}
+
+	.light {
+		--background: 210 20% 98%;
+		--foreground: 224 71% 4%;
+
+		--card: 0 0% 100%;
+		--card-foreground: 222 47% 11%;
+
+		--popover: 0 0% 100%;
+		--popover-foreground: 222 47% 11%;
+
+		--primary: 262 83% 58%;
+		--primary-foreground: 210 40% 98%;
+
+		--secondary: 217 32% 92%;
+		--secondary-foreground: 215 28% 17%;
+
+		--muted: 220 14% 96%;
+		--muted-foreground: 220 8% 46%;
+
+		--accent: 262 83% 98%;
+		--accent-foreground: 222 47% 11%;
+
+		--destructive: 0 84% 60%;
+		--destructive-foreground: 210 40% 98%;
+
+		--border: 220 13% 91%;
+		--input: 220 13% 91%;
+		--ring: 262 83% 58%;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground font-grotesk;
+		font-feature-settings: "rlig" 1, "calt" 1;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-grotesk font-bold;
+	}
+}
+
+@layer components {
+	.glass {
+		@apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl;
+	}
+
+	.light .glass {
+		@apply bg-white/50 backdrop-blur-xl border-none shadow-lg;
+		border-radius: inherit;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.light .glass::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		padding: 1px;
+		background: linear-gradient(
+			to bottom right,
+			rgba(156, 39, 176, 0.3),
+			rgba(236, 64, 122, 0.2)
+		);
+		-webkit-mask: linear-gradient(#fff 0 0) content-box,
+			linear-gradient(#fff 0 0);
+		-webkit-mask-composite: xor;
+		mask-composite: exclude;
+		pointer-events: none;
+	}
+
+	.gradient-heading {
+		@apply bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent;
+	}
+
+	.light .gradient-heading {
+		@apply bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent;
+	}
+
+	.border-gradient {
+		border-image: linear-gradient(
+				to right,
+				theme("colors.purple.500"),
+				theme("colors.pink.500")
+			)
+			1;
+	}
+
+	.light .border-gradient {
+		border-image: linear-gradient(
+				to right,
+				theme("colors.purple.600"),
+				theme("colors.pink.600")
+			)
+			1;
+	}
+
+	.hero-gradient {
+		background: radial-gradient(
+			circle at center,
+			rgba(156, 39, 176, 0.3) 0%,
+			rgba(0, 0, 0, 0) 70%
+		);
+	}
+
+	.light .hero-gradient {
+		background: radial-gradient(
+			circle at center,
+			rgba(156, 39, 176, 0.15) 0%,
+			rgba(255, 255, 255, 0) 70%
+		);
+	}
+}
+
+/* Smooth scrolling and selection styles */
+html {
+	scroll-behavior: smooth;
+}
+
+::selection {
+	@apply bg-purple-500/30 text-white dark:text-white light:text-gray-900;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 14px;
+}
+
+::-webkit-scrollbar-track {
+	@apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-secondary rounded-full border-4 border-background;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	@apply bg-primary;
+}
+
+/* Light mode scrollbar adjustments */
+.light ::-webkit-scrollbar-thumb {
+	@apply bg-purple-400/70 border-4 border-background;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+	@apply bg-purple-500;
+}
+
+/* Improve prose styling for light mode */
+.light .prose {
+	@apply prose-slate !max-w-none;
+	color: hsl(var(--foreground));
+}
+
+.light .prose strong {
+	@apply text-gray-900 font-semibold;
+}
+
+.light .prose a {
+	@apply text-purple-600 font-semibold hover:text-purple-700 transition-colors;
+}
+
+.light .prose h1,
+.light .prose h2,
+.light .prose h3,
+.light .prose h4,
+.light .prose h5,
+.light .prose h6 {
+	@apply text-gray-900;
+}
+
+/* Maintain dark mode prose */
+.dark .prose {
+	@apply prose-invert;
+}

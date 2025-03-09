@@ -1,89 +1,126 @@
 ---
-import { Image } from "astro:assets";
-import Layout from "../layouts/Layout.astro";
-import { homePageContent, identity } from "../config";
-import SocialLink from "../components/SocialLink.astro";
-import Link from "../components/Link.astro";
 import { getCollection } from "astro:content";
+import AboutSection from "../components/AboutSection";
+import FeaturedProjects from "../components/FeaturedProjects";
+import Hero from "../components/Hero";
+import { homePageContent, identity, projectsPageContent } from "../config";
+import Layout from "../layouts/Layout.astro";
 
+// Get blog posts
 const posts = await getCollection("posts");
 posts.sort((a, b) => {
-  const dateA = new Date(a.data.pubDate).getTime();
-  const dateB = new Date(b.data.pubDate).getTime();
-  return dateB - dateA;
+	const dateA = new Date(a.data.pubDate).getTime();
+	const dateB = new Date(b.data.pubDate).getTime();
+	return dateB - dateA;
 });
-posts.splice(2)
+posts.splice(3);
+
+// Add some sample skills for the about section
+const skills = [
+	"JavaScript",
+	"TypeScript",
+	"React",
+	"Node.js",
+	"Astro",
+	"Tailwind CSS",
+];
+
+// Add sample tags to projects
+const projectsWithTags = projectsPageContent.projects.map((project) => ({
+	...project,
+	tags: ["Web", "UI/UX", "Frontend"],
+}));
 ---
 
 <Layout seo={homePageContent.seo}>
-  <section class="mt-10 max-w-2xl mx-auto px-6">
-    <h1 class="font-bold text-3xl mb-1">{identity.name}</h1>
-    <p class="opacity-60 mb-10">{homePageContent.role}</p>
-    <div class="flex flex-col min-[520px]:flex-row gap-6 mb-8">
-      <Image
-        src={identity.logo}
-        alt={identity.name}
-        width={100}
-        height={100}
-        class="rounded-full"
-      />
-      <div class="group flex flex-col justify-center gap-2 w-fit">
-        {
-          homePageContent.socialLinks.map((link) => (
-            <SocialLink
-              title={link.title}
-              url={link.url}
-              icon={link.icon}
-              external={link.external}
-            />
-          ))
-        }
+  <!-- Hero Section -->
+  <Hero 
+    name={identity.name}
+    role={homePageContent.role}
+    description={homePageContent.description}
+    image={identity.logo}
+    links={homePageContent.links}
+    client:load
+  />
+  
+  <!-- About Section -->
+  <AboutSection
+    title="About Me"
+    description={homePageContent.description + "\n\nI'm passionate about creating beautiful, functional websites and applications that provide great user experiences."}
+    skills={skills}
+    aboutLink="/about"
+    client:visible
+  />
+  
+  <!-- Featured Projects -->
+  <FeaturedProjects
+    title="Featured Projects"
+    description="Check out some of my recent work"
+    projects={projectsWithTags.slice(0, 3)}
+    viewAllLink="/projects"
+    client:visible
+  />
+  
+  <!-- Blog Section -->
+  <section class="py-20">
+    <div class="container px-4 mx-auto">
+      <div class="max-w-2xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-heading">
+          Latest Articles
+        </h2>
+        <p class="text-lg text-muted-foreground">
+          Thoughts, stories and ideas
+        </p>
       </div>
-    </div>
-    <p class="max-w-md mb-8">
-      {homePageContent.description}
-    </p>
-    <div class="flex items-center gap-4 group w-fit">
-      {
-        homePageContent.links.map((link) => (
-          <Link text={link.title} href={link.url} external={link.external} />
-        ))
-      }
-    </div>
-  </section>
-  <section class="mt-20 max-w-2xl mx-auto px-6">
-    <h2 class="mb-8">Latest Posts</h2>
-    <div class="grid grid-cols-1 gap-10 sm:gap-6 mb-10">
-      {
-        posts.map((post) => (
-          <a
-            href={`/blog/${post.id}`}
-            class=" sm:flex sm:flex-row-reverse sm:justify-between sm:gap-6 post"
-          >
-            <Image
-              src={post.data.image.url}
-              alt={post.data.image.url}
-              width={100}
-              height={100}
-              class={"rounded-lg w-[100px] h-[100px] object-cover"}
-            />
-            <div class="mt-4 sm:my-auto">
-              <p class="opacity-60 mb-2">
-                {post.data.pubDate.toLocaleDateString()}
-              </p>
-              <h3 class="font-medium hover-underline">{post.data.title}</h3>
-              <p class="text-sm opacity-60 mt-2 mb-3">{post.data.description}</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <a href={`/blog/${post.id}`} class="group">
+            <div class="glass rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 h-full flex flex-col">
+              <div class="relative aspect-video overflow-hidden">
+                <img 
+                  src={post.data.image.url} 
+                  alt={post.data.title} 
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div class="p-6 flex-1 flex flex-col">
+                <p class="text-sm text-muted-foreground mb-2">
+                  {new Date(post.data.pubDate).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })}
+                </p>
+                <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  {post.data.title}
+                </h3>
+                <p class="text-muted-foreground line-clamp-2 mb-4 flex-1">
+                  {post.data.description}
+                </p>
+                <div class="flex items-center mt-auto">
+                  <span class="text-sm font-medium relative">
+                    Read Article
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+                  </span>
+                </div>
+              </div>
             </div>
           </a>
-        ))
-      }
-    </div>
-    <div class="text-center">
-      <a
-        href="/blog"
-        class="underline underline-offset-4 opacity-60 hover:opacity-100 transition-opacity"
-        >View all</a
-      >
+        ))}
+      </div>
+      
+      <div class="mt-12 text-center">
+        <a 
+          href="/blog"
+          class="inline-block relative overflow-hidden group"
+        >
+          <span class="relative z-10 text-lg font-medium px-4 py-2">
+            View All Articles
+          </span>
+          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:h-full opacity-80 group-hover:opacity-20"></span>
+        </a>
+      </div>
     </div>
   </section>
 </Layout>

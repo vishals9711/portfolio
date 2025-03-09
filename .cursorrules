@@ -1,0 +1,118 @@
+### **Astro 5.4 Portfolio Rules**
+
+### **Key Principles**
+
+- **Emphasize smooth animations** using Framer Motion, GSAP, or native CSS animations.
+- Prioritize **modern typography** with clear hierarchy and generous letter spacing.
+- Incorporate **glassmorphic effects** for card elements and sections.
+- Use **vibrant gradients** as backgrounds or overlays for dynamic visual appeal.
+- Implement **playful micro-interactions** to enhance user experience.
+- Ensure the website maintains a **cool, futuristic vibe** throughout.
+
+### **Project Structure**
+
+- Follow Astro 5.4 recommended structure:
+
+  ```
+  src/
+    components/
+    layouts/
+    pages/
+    styles/
+  public/
+  astro.config.mjs
+  ```
+
+- Separate content-heavy sections using Markdown or MDX.
+
+### **Component Development**
+
+- Create **.astro files** for base components.
+- Use **React** for dynamic UI elements that require interactivity.
+- Use **shadcn/ui** for components.
+- Use **tailwindcss** for styling.
+- Use **pnpm** for package manager.
+- Favor **composition over inheritance** for reusable UI blocks.
+- Use Astro’s `client:*` directives selectively to minimize JS usage.
+
+### **Styling & Effects**
+
+- Use Tailwind CSS with custom theme settings:
+  - Extend color palette for vibrant gradients.
+  - Implement blur and transparency for glassmorphic effects.
+- Avoid `@apply` — favor utility classes.
+- Use smooth transitions and easing functions (e.g., `ease-in-out`, `cubic-bezier`).
+- Implement `scroll-behavior: smooth` and GSAP/Framer Motion for entrance animations.
+
+### **Glassmorphic Effects**
+
+- Implement glassmorphic effects for:
+  - Hero sections
+  - Cards and project previews
+  - Navigation bar (optional)
+- Use semi-transparent backgrounds with subtle frosted-glass effects:
+
+  ```css
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  ```
+
+### **Data Fetching**
+
+- Use Astro’s built-in `getStaticPaths()` and `Astro.glob()` for dynamic content.
+- Leverage Markdown or MDX files for content-heavy pages (e.g., projects, blog posts).
+- Cache API responses during build time to optimize performance.
+
+### **SEO & Meta Tags**
+
+- Use `<head>` with dynamic meta tags for SEO.
+- Generate OG images dynamically for each project.
+- Implement a global `<SEO />` component with:
+  - Title, description, and social sharing metadata.
+  - Dynamic page-specific data.
+  - Canonical URLs.
+
+### **Performance Optimization**
+
+- Prioritize static generation (SSG) with minimal JS.
+- Use `client:load` for essential interactive components.
+- Use `client:visible` for elements only when in the viewport.
+- Implement lazy loading for images and videos.
+- Compress images using Astro’s `@astrojs/image` integration.
+
+### **Animation Best Practices**
+
+- Use Framer Motion or GSAP for high-impact animations like:
+  - Page transitions
+  - Section reveals
+  - Hover effects
+- Implement micro-interactions on:
+  - Button hover states
+  - Card lift effects
+  - Link underlines with smooth scaling
+
+### **Typography**
+
+- Use modern, minimal fonts like Inter, Space Grotesk, or Satoshi.
+- Set generous line height and letter spacing for clean readability.
+- Use Tailwind’s typography plugin for content-heavy sections.
+
+### **Deployment**
+
+- Deploy to Vercel or Netlify for best performance.
+- Enable server-side rendering (SSR) only for dynamic pages if needed.
+- Implement environment variables for API keys.
+
+### **Visual Consistency**
+
+- Favor:
+  - Large headings with vibrant gradients.
+  - Soft shadows for floating effects.
+  - Curved corner radii (2xl or above).
+  - Subtle glassmorphism across sections.
+
+### **Playful Interactions**
+
+- Add hover effects that reveal additional content.
+- Use smooth page transitions with fade or scale effects.
+- Implement subtle parallax scrolling where appropriate.

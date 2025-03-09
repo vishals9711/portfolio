@@ -1,168 +1,177 @@
 import type {
-  NavBarLink,
-  SocialLink,
-  Identity,
-  AboutPageContent,
-  ProjectPageContent,
-  BlogPageContent,
-  HomePageContent,
+	AboutPageContent,
+	BlogPageContent,
+	HomePageContent,
+	Identity,
+	NavBarLink,
+	ProjectPageContent,
+	SocialLink,
 } from "./types/config";
 
 export const identity: Identity = {
-  name: "Tim Witzdam",
-  logo: "/logo.webp",
-  email: "tim@witzdam.com",
+	name: "Vishal Sharma",
+	logo: "/logo.webp",
+	email: "vishalsharma1907@gmail.com",
 };
 
 export const navBarLinks: NavBarLink[] = [
-  {
-    title: "Home",
-    url: "/",
-  },
-  {
-    title: "About",
-    url: "/about",
-  },
-  {
-    title: "Projects",
-    url: "/projects",
-  },
-  {
-    title: "Blog",
-    url: "/blog",
-  },
+	{
+		title: "Home",
+		url: "/",
+	},
+	{
+		title: "About",
+		url: "/about",
+	},
+	{
+		title: "Projects",
+		url: "/projects",
+	},
+	{
+		title: "Blog",
+		url: "/blog",
+	},
 ];
 
 export const socialLinks: SocialLink[] = [
-  {
-    title: "GitHub",
-    url: "https://github.com/TimWitzdam",
-    icon: "mdi:github",
-    external: true,
-  },
-  {
-    title: "Mail",
-    url: "mailto:tim@witzdam.com",
-    icon: "mdi:email",
-  },
+	{
+		title: "GitHub",
+		url: "https://github.com/vishals9711",
+		icon: "mdi:github",
+		external: true,
+	},
+	{
+		title: "LinkedIn",
+		url: "https://linkedin.com/in/vishals9711",
+		icon: "mdi:linkedin",
+		external: true,
+	},
+	{
+		title: "Mail",
+		url: "mailto:vishalsharma1907@gmail.com",
+		icon: "mdi:email",
+	},
 ];
 
 // Home (/)
 export const homePageContent: HomePageContent = {
-  seo: {
-    title: "Tim Witzdam",
-    description:
-      "Full time student from Germany who loves building cool things using code.",
-    image: identity.logo,
-  },
-  role: "Student & Software Developer",
-  description:
-    "I'm Tim Witzdam, a full time student from Germany who also loves building cool things using code.",
-  socialLinks: socialLinks,
-  links: [
-    {
-      title: "My Projects",
-      url: "/projects",
-    },
-    {
-      title: "About Me",
-      url: "/about",
-    },
-  ],
+	seo: {
+		title: "Vishal Sharma",
+		description:
+			"Software Engineer building products that blend code, creativity, and cool vibes.",
+		image: identity.logo,
+	},
+	role: "Software Engineer & Product Builder",
+	description:
+		"I'm Vishal Sharma, a software engineer passionate about building digital products that combine smooth experiences, creativity, and cool vibes.",
+	socialLinks: socialLinks,
+	links: [
+		{
+			title: "Explore My Projects",
+			url: "/projects",
+		},
+		{
+			title: "Know More About Me",
+			url: "/about",
+		},
+	],
 };
 
 // About (/about)
 export const aboutPageContent: AboutPageContent = {
-  seo: {
-    title: "About | Tim Witzdam",
-    description:
-      "Full time student from Germany who loves building cool things using code.",
-    image: identity.logo,
-  },
-  subtitle: "Some information about myself",
-  about: {
-    description: `
-I'm Tim Witzdam, a full time student from Germany who also loves building cool things using code.
-<br/><br/>
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque placeat est architecto tempora voluptatem sit suscipit aspernatur? <br/><br/>
-Facere quibusdam reiciendis, distinctio sunt praesentium error accusantium consectetur nemo vero officia itaque.`, // Markdown is supported
-    image_l: {
-      url: "/demo-1.jpg",
-      alt: "Left Picture",
-    },
-    image_r: {
-      url: "/demo-1.jpg",
-      alt: "Right Picture",
-    },
-  },
-  work: {
-    description: `I've worked with a variety of technologies and tools to build cool things. Here are some of the projects I've worked on.`, // Markdown is supported
-    items: [
-      {
-        title: "Software Developer",
-        company: {
-          name: "Freelance",
-          image: "/logo.webp",
-          url: "https://github.com/TimWitzdam",
-        },
-        date: "2021 - Present",
-      },
-      {
-        title: "Software Developer",
-        company: {
-          name: "Freelance",
-          image: "/logo.webp",
-          url: "https://github.com/TimWitzdam",
-        },
-        date: "2019 - 2021",
-      },
-    ],
-  },
-  connect: {
-    description: `I'm always interested in meeting new people and learning new things. Feel free to connect with me on any of the following platforms.`, // Markdown is supported
-    links: socialLinks,
-  },
+	seo: {
+		title: "About | Vishal Sharma",
+		description:
+			"Software Engineer who loves building creative and interactive products.",
+		image: identity.logo,
+	},
+	subtitle: "A bit about me",
+	about: {
+		description: `
+I'm Vishal, a software engineer currently working at **The News Movement**, where I build scalable and innovative products using modern tech stacks. <br/><br/>
+I have a deep passion for crafting intuitive user experiences, automating workflows, and building tools that help people do things faster and better. <br/><br/>
+Recently, I've been working on products that automate content workflows, AI-powered summarization, and building high-impact applications for millions of users.`, // Markdown is supported
+		image_l: {
+			url: "/profile-1.jpg",
+			alt: "Picture of Vishal working",
+		},
+		image_r: {
+			url: "/profile-2.jpg",
+			alt: "Another picture of Vishal",
+		},
+	},
+	work: {
+		description: `I've been fortunate to work with incredible teams and products that impact millions of users. Here's a snapshot of my journey so far:`, // Markdown is supported
+		items: [
+			{
+				title: "Software Engineer",
+				company: {
+					name: "The News Movement",
+					image: "/tnm-logo.webp",
+					url: "https://www.thenewsmovement.com/",
+				},
+				date: "2023 - Present",
+			},
+			// {
+			//   title: "Software Engineer",
+			//   company: {
+			//     name: "Freelance",
+			//     image: "/freelance-logo.webp",
+			//     url: "https://github.com/vishalramanand",
+			//   },
+			//   date: "2021 - 2023",
+			// },
+		],
+	},
+	connect: {
+		description: `I'm always open to collaborating, brainstorming, or just talking about cool ideas in tech. Feel free to connect with me on any platform below.`, // Markdown is supported
+		links: socialLinks,
+	},
 };
 
 // Projects (/projects)
 export const projectsPageContent: ProjectPageContent = {
-  seo: {
-    title: "Projects | Tim Witzdam",
-    description: "Check out what I've been working on.",
-    image: identity.logo,
-  },
-  subtitle: "Check out what I've been working on.",
-  projects: [
-    {
-      title: "Project 1",
-      description: "Project 1 Description",
-      image: "/demo-2.jpg",
-      year: "2024",
-      url: "https://github.com/TimWitzdam",
-    },
-    {
-      title: "Project 1",
-      description: "Project 1 Description",
-      image: "/demo-2.jpg",
-      year: "2024",
-      url: "https://github.com/TimWitzdam",
-    },
-    {
-      title: "Project 1",
-      description: "Project 1 Description",
-      image: "/demo-2.jpg",
-      year: "2024",
-      url: "https://github.com/TimWitzdam",
-    },
-  ],
+	seo: {
+		title: "Projects | Vishal Sharma",
+		description:
+			"A curated selection of the projects I've built or contributed to.",
+		image: identity.logo,
+	},
+	subtitle: "Some of the coolest things I've built.",
+	projects: [
+		{
+			title: "Slack Bot: GitHub Issue Generator",
+			description:
+				"A Slack bot that turns natural language into actionable GitHub issues.",
+			image: "/project-1.jpg",
+			year: "2025",
+			url: "https://github.com/vishals9711/slack-github-issues",
+		},
+		{
+			title: "AI Video Summary Tool",
+			description:
+				"An LLM-powered tool that generates concise summaries from long videos.",
+			image: "/project-2.jpg",
+			year: "2024",
+			url: "https://github.com/vishals9711/ai-video-summary",
+		},
+		{
+			title: "NYC Apartment Tracker",
+			description:
+				"A web app that helps people find and track apartments in NYC.",
+			image: "/project-3.jpg",
+			year: "2025",
+			url: "https://github.com/vishals9711/nyc-apartment-finder",
+		},
+	],
 };
 
 // Blog (/blog)
 export const blogPageContent: BlogPageContent = {
-  seo: {
-    title: "Blog | Tim Witzdam",
-    description: "Thoughts, stories and ideas.",
-    image: identity.logo,
-  },
-  subtitle: "Thoughts, stories and ideas.",
+	seo: {
+		title: "Blog | Vishal Sharma",
+		description: "Thoughts, deep dives, and stories from my experience.",
+		image: identity.logo,
+	},
+	subtitle: "Stories, ideas, and tech experiments.",
 };

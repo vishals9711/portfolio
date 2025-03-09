@@ -1,0 +1,180 @@
+---
+import { Badge } from "../../components/ui/badge";
+import { Button } from "../../components/ui/button";
+import {
+	FadeIn,
+	FadeInLeft,
+	FadeInRight,
+} from "../../components/ui/motion-wrapper";
+import { identity, projectsPageContent } from "../../config";
+import Layout from "../../layouts/Layout.astro";
+
+// Get project id from URL params
+export const getStaticPaths = () => {
+	return projectsPageContent.projects.map((_project, index) => ({
+		params: { id: index.toString() },
+	}));
+};
+
+const { id } = Astro.params;
+const projectIndex = Number.parseInt(id || "0");
+const project = projectsPageContent.projects[projectIndex];
+
+// If project doesn't exist, return 404
+if (!project) {
+	return Astro.redirect("/404");
+}
+
+// Sample tags for the project
+const tags = ["Web", "UI/UX", "Frontend"];
+
+// Define SEO metadata
+const seo = {
+	title: `${project.title} | ${identity.name}`,
+	description: project.description,
+	image: project.image, // Use the project image directly instead of a dynamic OG endpoint
+};
+
+// Sample related projects (excluding current one)
+const relatedProjects = projectsPageContent.projects
+	.filter((_, index) => index !== projectIndex)
+	.slice(0, 2);
+---
+
+<Layout seo={seo}>
+  <section class="py-20 relative">
+    <!-- Container-constrained background elements -->
+    <div class="absolute top-40 left-[5%] w-[30vw] max-w-md aspect-square rounded-[40%] bg-gradient-radial from-purple-500/15 via-purple-500/5 to-transparent blur-3xl -z-10 dark:from-purple-500/20 light:from-purple-600/10 light:via-purple-600/5"></div>
+    <div class="absolute bottom-40 right-[5%] w-[30vw] max-w-md aspect-square rounded-[40%] bg-gradient-radial from-pink-500/15 via-pink-500/5 to-transparent blur-3xl -z-10 dark:from-pink-500/20 light:from-pink-600/10 light:via-pink-600/5"></div>
+    
+    <div class="container px-4 mx-auto">
+      <div class="max-w-4xl mx-auto mb-16">
+        <a 
+          href="/projects" 
+          class="inline-flex items-center text-muted-foreground hover:text-white transition-colors mb-6"
+        >
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="20" 
+            height="20" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            class="mr-2"
+          >
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Back to Projects
+        </a>
+        
+        <FadeInLeft client:load>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-heading">
+            {project.title}
+          </h1>
+          
+          <div class="flex flex-wrap gap-2 mb-6">
+            {tags.map((tag) => (
+              <Badge variant="glass">{tag}</Badge>
+            ))}
+            <Badge variant="secondary" className="ml-2">{project.year}</Badge>
+          </div>
+          
+          <p class="text-lg text-muted-foreground mb-8">
+            {project.description}
+          </p>
+          
+          <Button variant="gradient" size="lg" asChild>
+            <a href={project.url} target="_blank" rel="noopener noreferrer">
+              View Project
+            </a>
+          </Button>
+        </FadeInLeft>
+      </div>
+      
+      <FadeInRight client:visible>
+        <div class="glass rounded-3xl p-2 relative overflow-hidden max-w-4xl mx-auto mb-20">
+          <div class="absolute -z-10 inset-0 bg-gradient-radial from-purple-500/5 via-pink-500/3 to-transparent dark:from-purple-500/5 dark:via-pink-500/3 dark:to-transparent light:from-purple-600/3 light:via-pink-500/2 light:to-transparent rounded-3xl"></div>
+          <img 
+            src={project.image} 
+            alt={project.title} 
+            class="w-full h-full object-cover rounded-2xl aspect-video"
+          />
+        </div>
+      </FadeInRight>
+      
+      <!-- Project content -->
+      <div class="max-w-4xl mx-auto">
+        <FadeIn client:visible>
+          <div class="glass rounded-3xl p-8 md:p-12 relative overflow-hidden mb-16">
+            <div class="absolute -z-10 inset-0 bg-gradient-radial from-purple-500/5 via-pink-500/3 to-transparent dark:from-purple-500/5 dark:via-pink-500/3 dark:to-transparent light:from-purple-600/3 light:via-pink-500/2 light:to-transparent rounded-3xl"></div>
+            
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 gradient-heading">
+              Project Overview
+            </h2>
+            
+            <div class="prose prose-invert prose-lg max-w-none">
+              <p>
+                This project showcases my skills in modern web development. I focused on creating a seamless user experience with intuitive navigation and clean visual design.
+              </p>
+              <h3>Key Features</h3>
+              <ul>
+                <li>Responsive design that works across all devices</li>
+                <li>Custom animations and interactions</li>
+                <li>Modern UI with attention to detail</li>
+                <li>Optimized performance for fast load times</li>
+              </ul>
+              <h3>Technologies Used</h3>
+              <p>
+                For this project, I leveraged modern frontend frameworks and tools to create a performant and maintainable codebase.
+              </p>
+              <p>
+                The project was a great opportunity to demonstrate my ability to create beautiful, functional websites that provide an excellent user experience.
+              </p>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+      
+      <!-- Related Projects -->
+      {relatedProjects.length > 0 && (
+        <div class="max-w-4xl mx-auto mt-20">
+          <h2 class="text-2xl md:text-3xl font-bold mb-10 gradient-heading text-center">
+            Related Projects
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            {relatedProjects.map((relatedProject, index) => (
+              <FadeIn client:visible delay={index * 0.1}>
+                <a href={`/project/${projectsPageContent.projects.findIndex(p => p.title === relatedProject.title)}`} class="block">
+                  <div class="glass rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 h-full flex flex-col">
+                    <div class="relative aspect-video overflow-hidden">
+                      <img 
+                        src={relatedProject.image} 
+                        alt={relatedProject.title} 
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div class="absolute top-3 right-3">
+                        <Badge variant="glass">
+                          {relatedProject.year}
+                        </Badge>
+                      </div>
+                    </div>
+                    <div class="p-6 flex-1">
+                      <h3 class="text-xl font-bold mb-2">{relatedProject.title}</h3>
+                      <p class="text-muted-foreground line-clamp-2">
+                        {relatedProject.description}
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+</Layout> 
