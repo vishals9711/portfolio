@@ -41,8 +41,6 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@iconify-icon/react": "^2.3.0",
-		"@iconify-json/mdi": "^1.2.2",
 		"@tailwindcss/typography": "^0.5.16",
 		"astro-icon": "^1.1.5"
 	}

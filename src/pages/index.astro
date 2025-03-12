@@ -6,15 +6,6 @@ import Hero from "../components/Hero";
 import { homePageContent, identity, projectsPageContent } from "../config";
 import Layout from "../layouts/Layout.astro";
 
-// Get blog posts
-const posts = await getCollection("posts");
-posts.sort((a, b) => {
-	const dateA = new Date(a.data.pubDate).getTime();
-	const dateB = new Date(b.data.pubDate).getTime();
-	return dateB - dateA;
-});
-posts.splice(3);
-
 // Add some sample skills for the about section
 const skills = [
 	"JavaScript",
@@ -60,67 +51,4 @@ const projectsWithTags = projectsPageContent.projects.map((project) => ({
     viewAllLink="/projects"
     client:visible
   />
-  
-  <!-- Blog Section -->
-  <section class="py-20">
-    <div class="container px-4 mx-auto">
-      <div class="max-w-2xl mx-auto text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-heading">
-          Latest Articles
-        </h2>
-        <p class="text-lg text-muted-foreground">
-          Thoughts, stories and ideas
-        </p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post) => (
-          <a href={`/blog/${post.id}`} class="group">
-            <div class="glass rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 h-full flex flex-col">
-              <div class="relative aspect-video overflow-hidden">
-                <img 
-                  src={post.data.image.url} 
-                  alt={post.data.title} 
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              <div class="p-6 flex-1 flex flex-col">
-                <p class="text-sm text-muted-foreground mb-2">
-                  {new Date(post.data.pubDate).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  })}
-                </p>
-                <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
-                  {post.data.title}
-                </h3>
-                <p class="text-muted-foreground line-clamp-2 mb-4 flex-1">
-                  {post.data.description}
-                </p>
-                <div class="flex items-center mt-auto">
-                  <span class="text-sm font-medium relative">
-                    Read Article
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
-      
-      <div class="mt-12 text-center">
-        <a 
-          href="/blog"
-          class="inline-block relative overflow-hidden group"
-        >
-          <span class="relative z-10 text-lg font-medium px-4 py-2">
-            View All Articles
-          </span>
-          <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:h-full opacity-80 group-hover:opacity-20"></span>
-        </a>
-      </div>
-    </div>
-  </section>
 </Layout>

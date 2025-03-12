@@ -88,7 +88,7 @@ export default function Hero({
 							<div className="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4">
 								{links.map((link, index) => (
 									<Button
-										key={index}
+										key={`${link.title}-${index}`}
 										variant={index === 0 ? "gradient" : "glass"}
 										size="default"
 										asChild

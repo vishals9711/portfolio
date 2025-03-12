@@ -75,6 +75,7 @@ export type Project = {
 	image: string;
 	year: string;
 	url: string;
+	tech?: string[];
 };
 
 export type ProjectPageContent = {

@@ -27,29 +27,25 @@ export const navBarLinks: NavBarLink[] = [
 		title: "Projects",
 		url: "/projects",
 	},
-	{
-		title: "Blog",
-		url: "/blog",
-	},
 ];
 
 export const socialLinks: SocialLink[] = [
 	{
 		title: "GitHub",
 		url: "https://github.com/vishals9711",
-		icon: "github",
+		icon: "/mdi--github.svg",
 		external: true,
 	},
 	{
 		title: "LinkedIn",
 		url: "https://linkedin.com/in/vishals9711",
-		icon: "linkedin",
+		icon: "/mdi--linkedin.svg",
 		external: true,
 	},
 	{
 		title: "Mail",
 		url: "mailto:vishalsharma1907@gmail.com",
-		icon: "email",
+		icon: "/material-symbols--mail.svg",
 	},
 ];
 
@@ -140,29 +136,56 @@ export const projectsPageContent: ProjectPageContent = {
 	subtitle: "Some of the coolest things I've built.",
 	projects: [
 		{
-			title: "Slack Bot: GitHub Issue Generator",
+			title: "Task Crafter",
 			description:
-				"A Slack bot that turns natural language into actionable GitHub issues.",
-			image: "/project-1.jpg",
-			year: "2025",
-			url: "https://github.com/vishals9711/slack-github-issues",
+				"A tool that extracts tasks and subtasks from free-form text and allows you to create GitHub issues from them.",
+			image: "/task_crafter.jpg",
+			year: "2023",
+			url: "https://task-crafter-one.vercel.app/",
+			tech: ["Next.js", "TypeScript", "GitHub API"],
 		},
 		{
-			title: "AI Video Summary Tool",
+			title: "Terms Simplified",
 			description:
-				"An LLM-powered tool that generates concise summaries from long videos.",
-			image: "/project-2.jpg",
-			year: "2024",
-			url: "https://github.com/vishals9711/ai-video-summary",
+				"An app that transforms complex legal jargon into easy-to-understand language, making terms of service and privacy policies accessible to everyone.",
+			image: "/terms_simplified.jpg",
+			year: "2023",
+			url: "https://github.com/vishals9711/terms_simplified",
+			tech: ["React", "TypeScript", "shadcn/ui"],
 		},
 		{
-			title: "NYC Apartment Tracker",
+			title: "CLI Chat",
 			description:
-				"A web app that helps people find and track apartments in NYC.",
-			image: "/project-3.jpg",
-			year: "2025",
-			url: "https://github.com/vishals9711/nyc-apartment-finder",
+				"A command-line interface tool for generating shell scripts using OpenAI, making terminal automation more accessible.",
+			image: "/cli_chat.jpg",
+			year: "2022",
+			url: "https://github.com/vishals9711/clichat",
+			tech: ["Python", "OpenAI API"],
 		},
+		// {
+		// 	title: "Slack Bot: GitHub Issue Generator",
+		// 	description:
+		// 		"A Slack bot that turns natural language into actionable GitHub issues.",
+		// 	image: "/project-1.jpg",
+		// 	year: "2025",
+		// 	url: "https://github.com/vishals9711/slack-github-issues",
+		// },
+		// {
+		// 	title: "AI Video Summary Tool",
+		// 	description:
+		// 		"An LLM-powered tool that generates concise summaries from long videos.",
+		// 	image: "/project-2.jpg",
+		// 	year: "2024",
+		// 	url: "https://github.com/vishals9711/ai-video-summary",
+		// },
+		// {
+		// 	title: "NYC Apartment Tracker",
+		// 	description:
+		// 		"A web app that helps people find and track apartments in NYC.",
+		// 	image: "/project-3.jpg",
+		// 	year: "2025",
+		// 	url: "https://github.com/vishals9711/nyc-apartment-finder",
+		// },
 	],
 };
 

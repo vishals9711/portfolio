@@ -38,11 +38,11 @@ export default function ProjectCard({
 				glass={glass}
 				gradient={gradient}
 			>
-				<div className="relative overflow-hidden aspect-video">
+				<div className="relative overflow-hidden aspect-video flex items-center justify-center bg-slate-900/20">
 					<img
 						src={image}
 						alt={title}
-						className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+						className="w-full h-full object-contain transition-transform duration-500 hover:scale-110"
 					/>
 					<div className="absolute top-3 right-3">
 						<Badge variant={glass ? "glass" : "gradient"}>{year}</Badge>
@@ -60,8 +60,8 @@ export default function ProjectCard({
 
 					{tags.length > 0 && (
 						<div className="flex flex-wrap gap-2 mb-4">
-							{tags.map((tag, index) => (
-								<Badge key={index} variant="secondary" className="text-xs">
+							{tags.map((tag) => (
+								<Badge key={tag} variant="secondary" className="text-xs">
 									{tag}
 								</Badge>
 							))}
