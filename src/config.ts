@@ -140,7 +140,7 @@ export const projectsPageContent: ProjectPageContent = {
 			description:
 				"A tool that extracts tasks and subtasks from free-form text and allows you to create GitHub issues from them.",
 			image: "/task_crafter.jpg",
-			year: "2023",
+			year: "2025",
 			url: "https://task-crafter-one.vercel.app/",
 			tech: ["Next.js", "TypeScript", "GitHub API"],
 		},
@@ -149,7 +149,7 @@ export const projectsPageContent: ProjectPageContent = {
 			description:
 				"An app that transforms complex legal jargon into easy-to-understand language, making terms of service and privacy policies accessible to everyone.",
 			image: "/terms_simplified.jpg",
-			year: "2023",
+			year: "2024",
 			url: "https://github.com/vishals9711/terms_simplified",
 			tech: ["React", "TypeScript", "shadcn/ui"],
 		},
@@ -158,7 +158,7 @@ export const projectsPageContent: ProjectPageContent = {
 			description:
 				"A command-line interface tool for generating shell scripts using OpenAI, making terminal automation more accessible.",
 			image: "/cli_chat.jpg",
-			year: "2022",
+			year: "2024",
 			url: "https://github.com/vishals9711/clichat",
 			tech: ["Python", "OpenAI API"],
 		},
