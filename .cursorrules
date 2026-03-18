@@ -1,118 +1,34 @@
-### **Astro 5.4 Portfolio Rules**
+### Portfolio Repo Cursor Rules
 
-### **Key Principles**
+### Read First
 
-- **Emphasize smooth animations** using Framer Motion, GSAP, or native CSS animations.
-- Prioritize **modern typography** with clear hierarchy and generous letter spacing.
-- Incorporate **glassmorphic effects** for card elements and sections.
-- Use **vibrant gradients** as backgrounds or overlays for dynamic visual appeal.
-- Implement **playful micro-interactions** to enhance user experience.
-- Ensure the website maintains a **cool, futuristic vibe** throughout.
+- Read `/Users/vishal/Projects/products/portfolio/AGENTS.md` before making changes.
+- Treat `AGENTS.md` as the canonical repo contract.
+- Use `/Users/vishal/Projects/systems/superpaper/superpaper/projects/portfolio_maintainer` as the canonical planning and project-memory surface.
 
-### **Project Structure**
+### Project Reality
 
-- Follow Astro 5.4 recommended structure:
+- This is an Astro 5 portfolio repo using Tailwind, React islands, TypeScript, Biome, and `pnpm`.
+- Real content currently lives in `src/config.ts` and `src/content/posts/`.
+- Keep instructions aligned with the actual repo state, not with generic template assumptions.
 
-  ```
-  src/
-    components/
-    layouts/
-    pages/
-    styles/
-  public/
-  astro.config.mjs
-  ```
+### Design Direction
 
-- Separate content-heavy sections using Markdown or MDX.
+- Preserve the existing visual language: modern typography, gradient accents, glass surfaces, and polished motion.
+- Keep animations intentional and lightweight; prefer the repo's current Framer Motion and transition helpers over introducing new animation stacks.
+- Avoid bland template-looking copy or visuals. Portfolio content should reflect Vishal's real work and public persona.
+- Favor expressive but controlled UI changes that still ship as a fast static-first site.
 
-### **Component Development**
+### Implementation Rules
 
-- Create **.astro files** for base components.
-- Use **React** for dynamic UI elements that require interactivity.
-- Use **shadcn/ui** for components.
-- Use **tailwindcss** for styling.
-- Use **pnpm** for package manager.
-- Favor **composition over inheritance** for reusable UI blocks.
-- Use Astro’s `client:*` directives selectively to minimize JS usage.
+- Prefer `.astro` components for static structure and React components only where interactivity is needed.
+- Use Astro `client:*` directives selectively to minimize hydration.
+- Keep `src/config.ts` as the primary content/config surface unless the task explicitly requires a broader content-model refactor.
+- Keep blog changes consistent with the schema in `src/content.config.ts`.
+- Favor composition, small components, and incremental edits over broad rewrites.
 
-### **Styling & Effects**
+### Validation
 
-- Use Tailwind CSS with custom theme settings:
-  - Extend color palette for vibrant gradients.
-  - Implement blur and transparency for glassmorphic effects.
-- Avoid `@apply` — favor utility classes.
-- Use smooth transitions and easing functions (e.g., `ease-in-out`, `cubic-bezier`).
-- Implement `scroll-behavior: smooth` and GSAP/Framer Motion for entrance animations.
-
-### **Glassmorphic Effects**
-
-- Implement glassmorphic effects for:
-  - Hero sections
-  - Cards and project previews
-  - Navigation bar (optional)
-- Use semi-transparent backgrounds with subtle frosted-glass effects:
-
-  ```css
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  ```
-
-### **Data Fetching**
-
-- Use Astro’s built-in `getStaticPaths()` and `Astro.glob()` for dynamic content.
-- Leverage Markdown or MDX files for content-heavy pages (e.g., projects, blog posts).
-- Cache API responses during build time to optimize performance.
-
-### **SEO & Meta Tags**
-
-- Use `<head>` with dynamic meta tags for SEO.
-- Generate OG images dynamically for each project.
-- Implement a global `<SEO />` component with:
-  - Title, description, and social sharing metadata.
-  - Dynamic page-specific data.
-  - Canonical URLs.
-
-### **Performance Optimization**
-
-- Prioritize static generation (SSG) with minimal JS.
-- Use `client:load` for essential interactive components.
-- Use `client:visible` for elements only when in the viewport.
-- Implement lazy loading for images and videos.
-- Compress images using Astro’s `@astrojs/image` integration.
-
-### **Animation Best Practices**
-
-- Use Framer Motion or GSAP for high-impact animations like:
-  - Page transitions
-  - Section reveals
-  - Hover effects
-- Implement micro-interactions on:
-  - Button hover states
-  - Card lift effects
-  - Link underlines with smooth scaling
-
-### **Typography**
-
-- Use modern, minimal fonts like Inter, Space Grotesk, or Satoshi.
-- Set generous line height and letter spacing for clean readability.
-- Use Tailwind’s typography plugin for content-heavy sections.
-
-### **Deployment**
-
-- Deploy to Vercel or Netlify for best performance.
-- Enable server-side rendering (SSR) only for dynamic pages if needed.
-- Implement environment variables for API keys.
-
-### **Visual Consistency**
-
-- Favor:
-  - Large headings with vibrant gradients.
-  - Soft shadows for floating effects.
-  - Curved corner radii (2xl or above).
-  - Subtle glassmorphism across sections.
-
-### **Playful Interactions**
-
-- Add hover effects that reveal additional content.
-- Use smooth page transitions with fade or scale effects.
-- Implement subtle parallax scrolling where appropriate.
+- For code changes, prefer `pnpm lint` and `pnpm build`.
+- For docs-only changes, verify paths, commands, and cross-file consistency.
+- If repo behavior or maintainer workflow changes materially, update the linked Superpaper notes in the same session.

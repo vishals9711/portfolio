@@ -1,0 +1,88 @@
+{
+    "portfolio": {
+        "identity": {
+            "full_name": "Vishal Sharma",
+            "title": "Full-Stack Software Engineer",
+            "tagline": "Building AI-powered software solutions, agentic systems, and functional full-stack applications.",
+            "location": "Brooklyn, New York (Previously San Francisco Bay Area)",
+            "github": "vishals9711",
+            "professional_focus": [
+                "Forward Deployed Engineering",
+                "System Architecture",
+                "AI Integration"
+            ]
+        },
+        "professional_experience": [
+            {
+                "company": "The News Movement",
+                "role": "Software Engineer",
+                "location": "New York, NY",
+                "focus": "Full-stack development, system architecture, and deployment strategies."
+            }
+        ],
+        "education": {
+            "degree": "Master of Science in Computer Science",
+            "institution": "San Francisco State University",
+            "location": "San Francisco, CA"
+        },
+        "technical_stack": {
+            "languages": [
+                "Python",
+                "JavaScript",
+                "TypeScript"
+            ],
+            "ai_and_frameworks": [
+                "LangChain",
+                "Agentic Systems Frameworks",
+                "Prompt Engineering"
+            ],
+            "infrastructure": [
+                "Cloud Hosting",
+                "Deployment Pipelines",
+                "System Design"
+            ]
+        },
+        "active_projects": [
+            {
+                "name": "LifeOS / Atman Project",
+                "type": "Personal AI Infrastructure",
+                "description": "Designing and architecting an AI-powered personal assistant intended to function as a comprehensive operating system for daily workflows and life management."
+            },
+            {
+                "name": "Robotics & Python Mentorship",
+                "type": "Education & Leadership",
+                "description": "Developing lesson plans and guiding a high school student through foundational Python programming and applied robotics concepts."
+            },
+            {
+                "name": "Co-Evolution of AI and Humanity",
+                "type": "Content Creation",
+                "description": "Scripting a YouTube video essay exploring the philosophical and practical themes of co-evolution between human consciousness and artificial intelligence."
+            }
+        ],
+        "personal_context": {
+            "philosophy_and_culture": {
+                "cinema": "Deep appreciation for sci-fi films exploring consciousness and AI, such as 'Interstellar' and 'Arrival'.",
+                "institutions": "Frequenting the Metropolitan Museum of Art, Lincoln Center, and the NY Philharmonic."
+            },
+            "volunteering": [
+                {
+                    "organization": "Three Jewels NYC",
+                    "role": "Cafe Volunteer",
+                    "schedule": "Friday Nights"
+                },
+                {
+                    "organization": "Brooklyn Cat Cafe",
+                    "role": "Volunteer",
+                    "started": "March 2025"
+                }
+            ],
+            "hobbies_and_lifestyle": {
+                "photography": "Shooting with Nikon mirrorless systems, specifically focusing on astrophotography, stacking exposures of the Milky Way, and capturing NYC landmarks.",
+                "coffee": "Specialty brewing enthusiast; trained in Barista Fundamentals at Counter Culture Coffee and frequently brewing beans from roasters like La Cabra.",
+                "fitness": "Bouldering at Brooklyn Boulders, practicing yoga and meditation, and playing tennis in Prospect Park.",
+                "culinary": "Vegetarian cooking and meal prepping, exploring diverse flavor profiles across Indian, Thai, and Mexican cuisines.",
+                "home": "Cultivating a container garden with cilantro and mint, and curating a signature sandalwood and fresh-cut grass fragrance profile."
+            }
+        }
+    }
+}
