@@ -1,0 +1,58 @@
+---
+interface Props {
+	className?: string;
+	title?: string;
+}
+
+const { className = "", title = "Future signal artwork" } = Astro.props;
+---
+
+<svg
+	viewBox="0 0 760 640"
+	fill="none"
+	role="img"
+	aria-label={title}
+	class={`future-signal ${className}`.trim()}
+>
+	<defs>
+		<linearGradient id="signalStroke" x1="0" y1="0" x2="760" y2="640" gradientUnits="userSpaceOnUse">
+			<stop offset="0%" stop-color="hsl(168 89% 58%)"></stop>
+			<stop offset="55%" stop-color="hsl(45 93% 64%)"></stop>
+			<stop offset="100%" stop-color="hsl(168 89% 58%)"></stop>
+		</linearGradient>
+		<linearGradient id="signalSoft" x1="40" y1="80" x2="660" y2="560" gradientUnits="userSpaceOnUse">
+			<stop offset="0%" stop-color="rgba(51, 255, 214, 0.24)"></stop>
+			<stop offset="100%" stop-color="rgba(255, 198, 87, 0.08)"></stop>
+		</linearGradient>
+	</defs>
+
+	<rect x="24" y="24" width="712" height="592" rx="40" class="future-signal__frame"></rect>
+	<rect x="68" y="68" width="624" height="504" rx="28" class="future-signal__panel"></rect>
+	<path d="M68 200H692" class="future-signal__line"></path>
+	<path d="M68 412H692" class="future-signal__line"></path>
+	<path d="M240 68V572" class="future-signal__line"></path>
+	<path d="M516 68V572" class="future-signal__line"></path>
+	<path d="M146 136L614 506" class="future-signal__diagonal"></path>
+	<path d="M146 506L614 136" class="future-signal__diagonal is-soft"></path>
+
+	<circle cx="240" cy="200" r="84" class="future-signal__halo"></circle>
+	<circle cx="516" cy="412" r="132" class="future-signal__halo is-large"></circle>
+	<circle cx="240" cy="200" r="10" class="future-signal__core"></circle>
+	<circle cx="516" cy="412" r="10" class="future-signal__core"></circle>
+
+	<path
+		d="M148 320C218 260 300 222 402 222C514 222 596 262 648 334"
+		class="future-signal__beam"
+	></path>
+	<path
+		d="M120 356C216 428 322 468 428 468C528 468 608 438 662 382"
+		class="future-signal__beam is-soft"
+	></path>
+
+	<g class="future-signal__text">
+		<text x="102" y="116">SYSTEM / TASTE / STRUCTURE</text>
+		<text x="102" y="550">BROOKLYN, NEW YORK</text>
+		<text x="542" y="116">VISHAL SHARMA</text>
+		<text x="534" y="550">INTENTIONAL SOFTWARE</text>
+	</g>
+</svg>

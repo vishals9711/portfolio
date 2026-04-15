@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	darkMode: ["class"],
 	theme: {
@@ -17,6 +17,7 @@ module.exports = {
 				input: "hsl(var(--input))",
 				ring: "hsl(var(--ring))",
 				background: "hsl(var(--background))",
+				surface: "#121212",
 				foreground: "hsl(var(--foreground))",
 				primary: {
 					DEFAULT: "hsl(var(--primary))",
@@ -56,7 +57,8 @@ module.exports = {
 				"4xl": "2rem",
 			},
 			fontFamily: {
-				sans: ["var(--font-sans)", "sans-serif"],
+				sans: ["Geist Sans", "var(--font-sans)", "sans-serif"],
+				mono: ["Geist Mono", "monospace"],
 				grotesk: ["Space Grotesk", "sans-serif"],
 				satoshi: ["Satoshi", "sans-serif"],
 			},
@@ -92,6 +94,10 @@ module.exports = {
 			},
 			backgroundImage: {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+				"glass-gradient":
+					"linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)",
+				"glow-radial":
+					"radial-gradient(circle at center, var(--tw-gradient-stops))",
 			},
 		},
 	},
@@ -102,4 +108,6 @@ module.exports = {
 			addVariant("light", ".light &");
 		},
 	],
-}; 
+};
+
+export default config;

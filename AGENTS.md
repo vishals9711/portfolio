@@ -21,6 +21,7 @@ When a new agent session starts in this repo, read these notes first:
 2. `/Users/vishal/Projects/systems/superpaper/superpaper/projects/portfolio_maintainer/portfolio_repo_baseline.md`
 3. `/Users/vishal/Projects/systems/superpaper/superpaper/projects/portfolio_maintainer/portfolio_agent_operating_contract.md`
 4. `/Users/vishal/Projects/systems/superpaper/superpaper/projects/portfolio_maintainer/chat/2026-03-17_chat_log_portfolio_maintainer_bootstrap.md`
+5. `/Users/vishal/Projects/systems/superpaper/superpaper/projects/portfolio_maintainer/chat/2026-04-14_chat_log_portfolio_agent_reinit.md`
 
 ## Repo Structure
 - `src/pages/`: Astro routes for home, about, projects, blog, and dynamic project/blog detail pages.

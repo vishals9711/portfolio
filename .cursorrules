@@ -8,7 +8,7 @@
 
 ### Project Reality
 
-- This is an Astro 5 portfolio repo using Tailwind, React islands, TypeScript, Biome, and `pnpm`.
+- This is an Astro 6 portfolio repo using Tailwind, React 19 islands where needed, TypeScript, Biome, Remotion-generated assets, and `pnpm`.
 - Real content currently lives in `src/config.ts` and `src/content/posts/`.
 - Keep instructions aligned with the actual repo state, not with generic template assumptions.
 

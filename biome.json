@@ -7,7 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": ["dist", ".dist", "node_modules", ".astro"]
+		"ignore": ["dist", ".dist", ".vercel", "node_modules", ".astro"]
 	},
 	"formatter": {
 		"enabled": true,
