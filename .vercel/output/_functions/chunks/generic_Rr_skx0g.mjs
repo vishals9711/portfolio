@@ -1,5 +1,5 @@
-import { g as getConfiguredImageService, i as imageConfig } from './_astro_assets_Cfm4a6el.mjs';
-import { i as isRemotePath, a as isRemoteAllowed } from './entrypoint_DxdXlVIs.mjs';
+import { g as getConfiguredImageService, i as imageConfig } from './_astro_assets_DAtADJhl.mjs';
+import { i as isRemotePath, a as isRemoteAllowed } from './entrypoint_g1RJS6Va.mjs';
 import * as mime from 'mrmime';
 
 const fnv1a52 = (str) => {

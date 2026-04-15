@@ -1,11 +1,12 @@
 ---
 interface Props {
 	label: string;
+	animate?: boolean;
 }
 
-const { label } = Astro.props;
+const { label, animate = false } = Astro.props;
 ---
 
-<div class="signal-divider" aria-hidden="true">
+<div class:list={["signal-divider", { "animate-scan": animate }]} aria-hidden="true">
 	<span>{label}</span>
 </div>

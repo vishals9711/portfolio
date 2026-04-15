@@ -1,13 +1,27 @@
-import { c as createComponent } from './astro-component_CcQ7a6rc.mjs';
+import { c as createComponent } from './astro-component_DTw8jYA1.mjs';
 import 'piccolore';
-import { m as maybeRenderHead, b as renderTemplate, c as addAttribute, h as renderHead, r as renderComponent, j as renderSlot } from './entrypoint_DxdXlVIs.mjs';
+import { h as createRenderInstruction, m as maybeRenderHead, c as addAttribute, b as renderTemplate, j as renderHead, r as renderComponent, k as renderSlot } from './entrypoint_g1RJS6Va.mjs';
 import 'clsx';
+
+async function renderScript(result, id) {
+  const inlined = result.inlinedScripts.get(id);
+  let content = "";
+  if (inlined != null) {
+    if (inlined) {
+      content = `<script type="module">${inlined}</script>`;
+    }
+  } else {
+    const resolved = await result.resolve(id);
+    content = `<script type="module" src="${result.userAssetsBase ? (result.base === "/" ? "" : result.base) + result.userAssetsBase : ""}${resolved}"></script>`;
+  }
+  return createRenderInstruction({ type: "script", id, content });
+}
 
 const $$SignalDivider = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$props, $$slots);
   Astro2.self = $$SignalDivider;
-  const { label } = Astro2.props;
-  return renderTemplate`${maybeRenderHead()}<div class="signal-divider" aria-hidden="true"> <span>${label}</span> </div>`;
+  const { label, animate = false } = Astro2.props;
+  return renderTemplate`${maybeRenderHead()}<div${addAttribute(["signal-divider", { "animate-scan": animate }], "class:list")} aria-hidden="true"> <span>${label}</span> </div>`;
 }, "/Users/vishal/Projects/products/portfolio/src/components/graphics/SignalDivider.astro", void 0);
 
 const identity = {
@@ -179,7 +193,7 @@ const $$SiteNav = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$props, $$slots);
   Astro2.self = $$SiteNav;
   const { links, pathname } = Astro2.props;
-  return renderTemplate`${maybeRenderHead()}<header class="site-nav-wrap"> <div class="shell"> <nav class="site-nav"> <a href="/" class="site-nav-mark" aria-label="Vishal Sharma home"> <span class="site-nav-mark__glyph"></span> <span>VS</span> </a> <div class="site-nav-links"> ${links.map((link) => renderTemplate`<a${addAttribute(link.url, "href")}${addAttribute(link.external ? "_blank" : void 0, "target")} rel="noreferrer"${addAttribute([
+  return renderTemplate`${maybeRenderHead()}<header class="site-nav-wrap"> <div class="shell"> <nav class="site-nav" aria-label="Main navigation"> <a href="/" class="site-nav-mark" aria-label="Vishal Sharma home"> <span class="site-nav-mark__glyph" aria-hidden="true"></span> <span>VS</span> </a> <div class="site-nav-links"> ${links.map((link) => renderTemplate`<a${addAttribute(link.url, "href")}${addAttribute(link.external ? "_blank" : void 0, "target")} rel="noreferrer"${addAttribute(pathname === link.url ? "page" : void 0, "aria-current")}${addAttribute([
     "site-nav-link",
     { "is-active": pathname === link.url }
   ], "class:list")}> ${link.title} </a>`)} </div> </nav> </div> </header>`;
@@ -190,7 +204,7 @@ const $$Layout = createComponent(($$result, $$props, $$slots) => {
   Astro2.self = $$Layout;
   const { seo } = Astro2.props;
   const pathname = Astro2.url.pathname;
-  return renderTemplate`<html lang="en" class="dark"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator"${addAttribute(Astro2.generator, "content")}><title>${seo.title}</title><meta name="description"${addAttribute(seo.description, "content")}><meta property="og:title"${addAttribute(seo.title, "content")}><meta property="og:description"${addAttribute(seo.description, "content")}><meta property="og:image"${addAttribute(seo.image, "content")}>${renderHead()}</head> <body> <div class="site-backdrop" aria-hidden="true"> <div class="site-grid"></div> <div class="site-glow site-glow-a"></div> <div class="site-glow site-glow-b"></div> </div> ${renderComponent($$result, "SiteNav", $$SiteNav, { "links": navBarLinks, "pathname": pathname })} <main class="site-main"> ${renderSlot($$result, $$slots["default"])} </main> <footer class="site-footer"> <div class="shell"> <div class="footer-panel"> <div> <p class="footer-kicker">Vishal Sharma</p> <h2 class="footer-title">${identity.role}</h2> </div> <div class="footer-meta"> <p>${identity.location}</p> <p> <a${addAttribute(`mailto:${identity.email}`, "href")}>${identity.email}</a> </p> </div> <div class="footer-links"> ${socialLinks.map((link) => renderTemplate`<a${addAttribute(link.url, "href")}${addAttribute(link.external ? "_blank" : void 0, "target")} rel="noreferrer"> ${link.title} </a>`)} </div> </div> </div> </footer> </body></html>`;
+  return renderTemplate`<html lang="en" class="dark"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator"${addAttribute(Astro2.generator, "content")}><title>${seo.title}</title><meta name="description"${addAttribute(seo.description, "content")}><meta property="og:title"${addAttribute(seo.title, "content")}><meta property="og:description"${addAttribute(seo.description, "content")}><meta property="og:image"${addAttribute(seo.image, "content")}><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title"${addAttribute(seo.title, "content")}><meta name="twitter:description"${addAttribute(seo.description, "content")}>${renderHead()}</head> <body> <div class="site-backdrop" aria-hidden="true"> <div class="site-grid"></div> <div class="site-glow site-glow-a"></div> <div class="site-glow site-glow-b"></div> <div class="site-glow site-glow-c"></div> <div class="site-glow site-glow-d"></div> </div> ${renderComponent($$result, "SiteNav", $$SiteNav, { "links": navBarLinks, "pathname": pathname })} <main class="site-main"> ${renderSlot($$result, $$slots["default"])} </main> <footer class="site-footer"> <div class="shell"> <div class="footer-gradient-bar"></div> <div class="footer-panel"> <div> <p class="footer-kicker">Vishal Sharma</p> <h2 class="footer-title">${identity.role}</h2> </div> <div class="footer-meta"> <p>${identity.location}</p> <p> <a${addAttribute(`mailto:${identity.email}`, "href")}>${identity.email}</a> </p> </div> <div class="footer-links"> ${socialLinks.map((link) => renderTemplate`<a${addAttribute(link.url, "href")}${addAttribute(link.external ? "_blank" : void 0, "target")} rel="noreferrer"> ${link.title} </a>`)} </div> </div> </div> </footer> <!-- Scroll reveal: IntersectionObserver for .reveal-on-scroll elements --> ${renderScript($$result, "/Users/vishal/Projects/products/portfolio/src/layouts/Layout.astro?astro&type=script&index=0&lang.ts")} </body> </html>`;
 }, "/Users/vishal/Projects/products/portfolio/src/layouts/Layout.astro", void 0);
 
-export { $$Layout as $, aboutPageContent as a, $$SignalDivider as b, blogPageContent as c, homePageContent as h, identity as i, socialLinks as s };
+export { $$Layout as $, aboutPageContent as a, $$SignalDivider as b, blogPageContent as c, homePageContent as h, identity as i, renderScript as r, socialLinks as s };

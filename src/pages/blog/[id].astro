@@ -21,10 +21,13 @@ const { Content, remarkPluginFrontmatter } = await render(entry);
 		image: entry.data.image.url,
 	}}
 >
+	<!-- Reading progress bar -->
+	<div class="reading-progress-bar" id="reading-progress" aria-hidden="true"></div>
+
 	<article class="shell article-shell">
 		<div class="article-intro">
 			<a href="/blog" class="back-link">Back to writing</a>
-			<SignalDivider label="Essay" />
+			<SignalDivider label="Essay" animate={true} />
 			<h1 class="page-title">{entry.data.title}</h1>
 			<p class="page-description">{entry.data.description}</p>
 			<div class="article-meta">
@@ -49,3 +52,17 @@ const { Content, remarkPluginFrontmatter } = await render(entry);
 		</div>
 	</article>
 </Layout>
+
+<script>
+	const bar = document.getElementById("reading-progress");
+	if (bar) {
+		const updateProgress = () => {
+			const scrollTop = window.scrollY;
+			const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+			const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+			bar.style.width = `${Math.min(progress, 100)}%`;
+		};
+		window.addEventListener("scroll", updateProgress, { passive: true });
+		updateProgress();
+	}
+</script>

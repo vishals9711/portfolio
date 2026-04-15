@@ -23,12 +23,17 @@ const pathname = Astro.url.pathname;
 		<meta property="og:title" content={seo.title} />
 		<meta property="og:description" content={seo.description} />
 		<meta property="og:image" content={seo.image} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={seo.title} />
+		<meta name="twitter:description" content={seo.description} />
 	</head>
 	<body>
 		<div class="site-backdrop" aria-hidden="true">
 			<div class="site-grid"></div>
 			<div class="site-glow site-glow-a"></div>
 			<div class="site-glow site-glow-b"></div>
+			<div class="site-glow site-glow-c"></div>
+			<div class="site-glow site-glow-d"></div>
 		</div>
 
 		<SiteNav links={navBarLinks} pathname={pathname} />
@@ -39,6 +44,7 @@ const pathname = Astro.url.pathname;
 
 		<footer class="site-footer">
 			<div class="shell">
+				<div class="footer-gradient-bar"></div>
 				<div class="footer-panel">
 					<div>
 						<p class="footer-kicker">Vishal Sharma</p>
@@ -60,5 +66,25 @@ const pathname = Astro.url.pathname;
 				</div>
 			</div>
 		</footer>
+
+		<!-- Scroll reveal: IntersectionObserver for .reveal-on-scroll elements -->
+		<script>
+			(function () {
+				if (typeof IntersectionObserver === "undefined") return;
+				const observer = new IntersectionObserver(
+					(entries) => {
+						for (const entry of entries) {
+							if (entry.isIntersecting) {
+								entry.target.classList.add("is-visible");
+								observer.unobserve(entry.target);
+							}
+						}
+					},
+					{ threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+				);
+				const targets = document.querySelectorAll(".reveal-on-scroll");
+				for (const el of targets) observer.observe(el);
+			})();
+		</script>
 	</body>
 </html>

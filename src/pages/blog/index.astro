@@ -17,19 +17,21 @@ for (const post of posts) {
 ---
 
 <Layout seo={blogPageContent.seo}>
+	<!-- ═══ PAGE HERO ══════════════════════════════════════════ -->
 	<section class="shell page-hero">
 		<p class="eyebrow">{blogPageContent.eyebrow}</p>
 		<h1 class="page-title">{blogPageContent.headline}</h1>
 		<p class="page-description">{blogPageContent.description}</p>
 	</section>
 
+	<!-- ═══ ARCHIVE ═══════════════════════════════════════════ -->
 	<section class="shell writing-archive">
-		<SignalDivider label="Archive" />
+		<SignalDivider label={`Archive · ${posts.length} ${posts.length === 1 ? "essay" : "essays"}`} animate={true} />
 		{
 			posts.length > 0 ? (
 				<div class="writing-archive__list">
 					{posts.map((post) => (
-						<a href={`/blog/${post.id}`} class="archive-row">
+						<a href={`/blog/${post.id}`} class="archive-row reveal-on-scroll">
 							<div class="archive-row__meta">
 								<span>
 									{post.data.pubDate.toLocaleDateString("en-US", {
@@ -38,7 +40,11 @@ for (const post of posts) {
 										year: "numeric",
 									})}
 								</span>
-								<span>{post.data.readingTime}</span>
+								{post.data.readingTime && (
+									<span class="reading-badge">
+										{post.data.readingTime}
+									</span>
+								)}
 							</div>
 							<div class="archive-row__body">
 								<h2>{post.data.title}</h2>

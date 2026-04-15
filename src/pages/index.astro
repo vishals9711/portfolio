@@ -14,9 +14,18 @@ const latestPosts = posts.slice(0, 2);
 ---
 
 <Layout seo={homePageContent.seo}>
+	<!-- ═══ HERO ═══════════════════════════════════════════════ -->
 	<section class="hero-section shell">
 		<div class="hero-copy">
-			<p class="eyebrow">{homePageContent.eyebrow}</p>
+			<div class="eyebrow-row">
+				<p class="eyebrow">{homePageContent.eyebrow}</p>
+				<div class="eyebrow-scan" aria-hidden="true"></div>
+				<span class="status-chip">
+					<span class="status-chip__dot" aria-hidden="true"></span>
+					Open to select work
+				</span>
+			</div>
+
 			<h1 class="hero-title">{homePageContent.headline}</h1>
 			<p class="hero-subtitle">{homePageContent.subheadline}</p>
 			<p class="hero-description">{homePageContent.description}</p>
@@ -30,6 +39,7 @@ const latestPosts = posts.slice(0, 2);
 						class:list={["action-link", { "is-secondary": index > 0 }]}
 					>
 						{action.title}
+						{index === 0 && <span aria-hidden="true">→</span>}
 					</a>
 				))}
 			</div>
@@ -64,11 +74,12 @@ const latestPosts = posts.slice(0, 2);
 		</div>
 	</section>
 
+	<!-- ═══ CURRENT FOCUS ══════════════════════════════════════ -->
 	<section class="shell section-grid">
-		<SignalDivider label="Current focus" />
+		<SignalDivider label="Current focus" animate={true} />
 		<div class="section-grid__cards">
 			{homePageContent.currentFocus.map((item, index) => (
-				<article class="signal-card">
+				<article class="signal-card reveal-on-scroll">
 					<p class="signal-card__index">0{index + 1}</p>
 					<h2>{item.title}</h2>
 					<p>{item.description}</p>
@@ -77,14 +88,15 @@ const latestPosts = posts.slice(0, 2);
 		</div>
 	</section>
 
+	<!-- ═══ CAPABILITIES ═══════════════════════════════════════ -->
 	<section class="shell split-section">
-		<div>
-			<SignalDivider label="Capabilities" />
+		<div class="reveal-on-scroll">
+			<SignalDivider label="Capabilities" animate={true} />
 			<h2 class="section-title">Technical depth with taste in the loop.</h2>
 		</div>
 		<div class="stack-list">
 			{homePageContent.capabilities.map((capability) => (
-				<article class="stack-item">
+				<article class="stack-item reveal-on-scroll">
 					<h3>{capability.title}</h3>
 					<p>{capability.detail}</p>
 				</article>
@@ -92,11 +104,12 @@ const latestPosts = posts.slice(0, 2);
 		</div>
 	</section>
 
+	<!-- ═══ PRINCIPLES ════════════════════════════════════════ -->
 	<section class="shell principle-strip">
-		<SignalDivider label="Principles" />
+		<SignalDivider label="Principles" animate={true} />
 		<div class="principle-grid">
 			{homePageContent.principles.map((principle) => (
-				<article class="principle-card">
+				<article class="principle-card reveal-on-scroll">
 					<h2>{principle.title}</h2>
 					<p>{principle.description}</p>
 				</article>
@@ -104,9 +117,10 @@ const latestPosts = posts.slice(0, 2);
 		</div>
 	</section>
 
+	<!-- ═══ WRITING PREVIEW ════════════════════════════════════ -->
 	<section class="shell writing-section">
-		<div class="writing-section__intro">
-			<SignalDivider label="Writing" />
+		<div class="writing-section__intro reveal-on-scroll">
+			<SignalDivider label="Writing" animate={true} />
 			<h2 class="section-title">Thoughts in progress, not content sludge.</h2>
 			<p>
 				Short essays on software, AI, culture, and the details that decide whether a product feels deliberate or disposable.
@@ -114,7 +128,7 @@ const latestPosts = posts.slice(0, 2);
 		</div>
 		<div class="writing-list">
 			{latestPosts.map((post) => (
-				<a href={`/blog/${post.id}`} class="writing-card">
+				<a href={`/blog/${post.id}`} class="writing-card reveal-on-scroll">
 					<p class="writing-card__meta">
 						{post.data.pubDate.toLocaleDateString("en-US", {
 							month: "short",
@@ -129,14 +143,17 @@ const latestPosts = posts.slice(0, 2);
 		</div>
 	</section>
 
-	<section class="shell cta-panel">
+	<!-- ═══ CTA ════════════════════════════════════════════════ -->
+	<section class="shell cta-panel reveal-on-scroll">
 		<div>
 			<p class="eyebrow">Contact</p>
 			<h2 class="section-title">{homePageContent.contactTitle}</h2>
 		</div>
 		<div>
 			<p>{homePageContent.contactDescription}</p>
-			<a href={`mailto:${identity.email}`} class="action-link">Email Vishal</a>
+			<a href={`mailto:${identity.email}`} class="action-link" style="margin-top: 1.5rem; display:inline-flex;">
+				Email Vishal <span aria-hidden="true">→</span>
+			</a>
 		</div>
 	</section>
 </Layout>

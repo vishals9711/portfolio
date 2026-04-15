@@ -5,22 +5,24 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout seo={aboutPageContent.seo}>
+	<!-- ═══ PAGE HERO ══════════════════════════════════════════ -->
 	<section class="shell page-hero">
 		<p class="eyebrow">{aboutPageContent.eyebrow}</p>
 		<h1 class="page-title">{aboutPageContent.headline}</h1>
 		<p class="page-description">{aboutPageContent.intro}</p>
 	</section>
 
+	<!-- ═══ EDITORIAL GRID ════════════════════════════════════ -->
 	<section class="shell editorial-grid">
-		<div>
-			<SignalDivider label="Path" />
+		<div class="reveal-on-scroll">
+			<SignalDivider label="Path" animate={true} />
 			<div class="story-block">
 				{aboutPageContent.story.map((paragraph) => (
 					<p>{paragraph}</p>
 				))}
 			</div>
 		</div>
-		<aside class="note-panel">
+		<aside class="note-panel reveal-on-scroll">
 			<p class="note-panel__label">Operating mode</p>
 			<ul>
 				{aboutPageContent.approach.map((item) => (
@@ -30,11 +32,13 @@ import Layout from "../layouts/Layout.astro";
 		</aside>
 	</section>
 
+	<!-- ═══ TIMELINE ══════════════════════════════════════════ -->
 	<section class="shell timeline-section">
-		<SignalDivider label="Timeline" />
-		<div class="timeline-list">
+		<SignalDivider label="Timeline" animate={true} />
+		<div class="timeline-track">
 			{aboutPageContent.timeline.map((item) => (
-				<article class="timeline-item">
+				<article class="timeline-item reveal-on-scroll">
+					<span class="timeline-item__node" aria-hidden="true"></span>
 					<div class="timeline-item__meta">
 						<p>{item.label}</p>
 						<span>{item.period}</span>
@@ -48,11 +52,12 @@ import Layout from "../layouts/Layout.astro";
 		</div>
 	</section>
 
+	<!-- ═══ INTERESTS ═════════════════════════════════════════ -->
 	<section class="shell interest-section">
-		<SignalDivider label="Interests" />
+		<SignalDivider label="Interests" animate={true} />
 		<div class="interest-grid">
 			{aboutPageContent.interests.map((item) => (
-				<article class="interest-card">
+				<article class="interest-card reveal-on-scroll">
 					<h2>{item.title}</h2>
 					<p>{item.description}</p>
 				</article>
@@ -60,7 +65,8 @@ import Layout from "../layouts/Layout.astro";
 		</div>
 	</section>
 
-	<section class="shell cta-panel">
+	<!-- ═══ CTA ════════════════════════════════════════════════ -->
+	<section class="shell cta-panel reveal-on-scroll">
 		<div>
 			<p class="eyebrow">Connect</p>
 			<h2 class="section-title">{aboutPageContent.connectTitle}</h2>
