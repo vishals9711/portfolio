@@ -2,7 +2,7 @@
 title: "AI Features Need Product Restraint"
 pubDate: 2025-01-18
 description: "Why AI works better as a sharpened layer inside a product than as a loud replacement for product thinking."
-author: "Vishal Sharma"
+author: "Vishal Ramanand Sharma"
 image: { url: "/demo-2.jpg", alt: "Layered editorial interface" }
 ---
 

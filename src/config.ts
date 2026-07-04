@@ -8,17 +8,17 @@ import type {
 } from "./types/config";
 
 export const identity: Identity = {
-	name: "Vishal Sharma",
+	name: "Vishal Ramanand Sharma",
 	logo: "/logo.webp",
 	email: "vishalsharma1907@gmail.com",
-	location: "Brooklyn, New York",
-	role: "Software engineer shaping intelligent products and cultural interfaces.",
+	location: "Brooklyn, NY",
+	role: "Systems Engineer & Non-Dual Thinker",
 };
 
 export const navBarLinks: NavBarLink[] = [
-	{ title: "Home", url: "/" },
+	{ title: "VS", url: "/" },
 	{ title: "About", url: "/about" },
-	{ title: "Writing", url: "/blog" },
+	{ title: "Library", url: "/blog" },
 ];
 
 export const socialLinks: SocialLink[] = [
@@ -46,76 +46,75 @@ export const socialLinks: SocialLink[] = [
 
 export const homePageContent: HomePageContent = {
 	seo: {
-		title: "Vishal Sharma | Software Engineer, Systems Thinker, Writer",
+		title: "Vishal Ramanand Sharma | Architecting Atman",
 		description:
-			"A dark, editorial portfolio for Vishal Sharma: software engineer, systems thinker, and builder of intelligent product experiences.",
+			"Public portfolio and personal web surface of Vishal Ramanand Sharma: systems engineer, non-dual thinker, and builder of intentional systems.",
 		image: identity.logo,
 	},
-	eyebrow:
-		"Software engineer in Brooklyn. Building for intelligence, taste, and clarity.",
+	eyebrow: "Systems Engineering. Non-Dual Consciousness. Brooklyn, NY.",
 	headline:
-		"Products should think clearly, move with intent, and feel unmistakably human.",
+		"Operating at the cutting edge of high-performance technical systems while anchoring the soul in ancient, non-dual consciousness.",
 	subheadline:
-		"I design technical systems that hold up under real use and still leave room for wonder.",
+		"Architecting Atman. Systems Engineer bridging the boundary between digital execution and cosmic awareness.",
 	description:
-		"My work lives at the intersection of product engineering, AI-enabled workflows, and cultural taste. I care about interface rhythm, infrastructure honesty, and building tools that make people sharper instead of louder.",
+		"I design technical systems that hold up under real scale and still leave room for wonder. My perspective is that computers are not cold, separate realities, but simply direct extensions of our human voices, senses, and consciousness.",
 	actions: [
-		{ title: "Read the writing", url: "/blog" },
+		{ title: "Initialize System", url: "/blog" },
 		{
-			title: "Start a conversation",
+			title: "View Visual Poems",
 			url: "mailto:vishalsharma1907@gmail.com",
 			external: true,
 		},
 	],
 	currentFocus: [
 		{
-			title: "Intelligent product systems",
+			title: "High-Performance Technical Systems",
 			description:
-				"Designing full-stack architectures where AI features improve the product instead of becoming the product.",
+				"Building backend frameworks, intelligent pipelines, and robust schemas that are fast, legible, and simple to reason about.",
 		},
 		{
-			title: "Editorial interaction design",
+			title: "The Architecture of Atman",
 			description:
-				"Exploring interfaces that borrow pacing, contrast, and composition from publishing and cinema.",
+				"Studying the seamless integration of digital creation tools with ancient, meditative states of being.",
 		},
 		{
-			title: "Operational clarity",
+			title: "Editorial Interaction Design",
 			description:
-				"Making complex delivery pipelines, APIs, and content systems easier to reason about across teams.",
+				"Crafting beautiful, light-first editorial interfaces that balance structured logic with human scale and breathing room.",
 		},
 	],
 	capabilities: [
 		{
-			title: "Full-stack product engineering",
+			title: "Systems Architecture & Scalability",
 			detail:
-				"TypeScript, Python, React, Astro, and the practical systems around them.",
+				"Designing robust distributed structures, legible APIs, and maintainable full-stack code bases.",
 		},
 		{
-			title: "AI workflow integration",
+			title: "Cognitive Engineering & AI",
 			detail:
-				"Agentic tooling, orchestration, prompt systems, and the product constraints that keep them useful.",
+				"Orchestrating agentic models and AI integrations that reduce noise and enhance human clarity.",
 		},
 		{
-			title: "System design",
+			title: "Interaction Aesthetics",
 			detail:
-				"Architecture, deployment strategy, and interfaces that age well as scope expands.",
+				"Tailoring custom responsive interfaces, fluid animations, and micro-interactions that feel premium.",
 		},
 	],
 	principles: [
 		{
-			title: "Make complexity legible",
+			title: "Ahimsa Paramo Dharma",
 			description:
-				"Good systems reduce cognitive drag. The user should feel the result, not the scaffolding.",
+				"Harmlessness as the highest law. Building technology that respects human attention, operates with deep integrity, and cultivates calm.",
 		},
 		{
-			title: "Treat aesthetics as engineering",
+			title: "Master the Micro-Details",
 			description:
-				"Visual precision, motion, and pacing are product decisions, not decoration layered on after the fact.",
+				"Visual and systemic precision are not decorations; they communicate structure, care, and reliability in every seam.",
 		},
 		{
-			title: "Ship ideas with proof",
+			title: "Make Complexity Legible",
 			description:
-				"Conviction matters, but evidence matters more. Build the version that can survive contact with users.",
+				"Reduce cognitive friction. The user should feel the elegance of the interface, never the complexity of the scaffolding.",
 		},
 	],
 	contactTitle: "Interested in building something sharp?",
@@ -125,52 +124,53 @@ export const homePageContent: HomePageContent = {
 
 export const aboutPageContent: AboutPageContent = {
 	seo: {
-		title: "About | Vishal Sharma",
+		title: "About | Vishal Ramanand Sharma",
 		description:
-			"About Vishal Sharma: software engineer focused on systems thinking, AI-enabled products, and editorial digital experiences.",
+			"About Vishal Ramanand Sharma: systems engineer focused on systems thinking, Advaita Vedanta, and editorial digital experiences.",
 		image: identity.logo,
 	},
-	eyebrow: "A profile in engineering, taste, and long-term curiosity.",
-	headline: "I like building systems that feel composed instead of accidental.",
+	eyebrow:
+		"A profile in systems, non-dual philosophy, and long-term curiosity.",
+	headline: "Architecting Atman: bridging execution with cosmic awareness.",
 	intro:
-		"I’m a software engineer based in Brooklyn, previously in the Bay Area, with an MS in Computer Science from San Francisco State University.",
+		"I am a systems engineer and thinker based in Brooklyn, NY. Previously in the Bay Area, I hold an MS in Computer Science from San Francisco State University.",
 	story: [
-		"My work has steadily moved toward the places where product quality and technical rigor meet. I care about delivery, but I care just as much about the shape of the thing that gets delivered.",
-		"At The News Movement, that has meant working across full-stack product surfaces, architecture decisions, and the operational details that keep a team moving. Outside of work, I keep circling back to AI systems, philosophy, and the question of how digital tools should influence human attention.",
+		"My journey exists in the seam where technical precision meets a profound, non-dual inquiry. I view code not as a cold tool of utility, but as a medium for conscious manifestation. This integration of the digital with the spiritual defines how I approach engineering—creating systems that are high-performance yet deeply human, robust yet open to wonder.",
+		"At The News Movement, I architect full-stack surfaces and core systems. Outside the terminal, I focus on yoga at Three Jewels, quiet reflection, and studying how tools should augment, rather than distract, human attention. I keep my feet grounded in the slow, tactile textures of Brooklyn and my mind anchored in Advaita Vedanta.",
 	],
 	approach: [
-		"I prefer systems with clear seams: components that can evolve, content models that can stretch, and architecture that does not collapse the moment ambition grows.",
+		"I prefer systems with clean seams: components that can evolve, content models that can stretch, and architecture that does not collapse the moment ambition grows.",
 		"I like interfaces with atmosphere, but not chaos. Motion should reveal structure. Copy should carry intent. Visual choices should earn their keep.",
 		"When a product gets smarter, I want that intelligence to create calm: better decisions, better defaults, fewer dead ends.",
 	],
 	timeline: [
 		{
 			label: "Now",
-			title: "Software Engineer, The News Movement",
+			title: "Systems Engineer, The News Movement",
 			period: "Present",
 			description:
-				"Building and refining product surfaces, systems, and workflows for a modern media organization.",
+				"Building robust architectures, media surfaces, and optimized pipelines for a modern news organization.",
 		},
 		{
 			label: "Foundation",
 			title: "MS in Computer Science",
 			period: "San Francisco State University",
 			description:
-				"Formal training in software engineering, systems thinking, and the technical habits that still anchor my work.",
+				"Formal training in software engineering, distributed systems, and mathematical foundations that still anchor my work.",
 		},
 		{
-			label: "Ongoing",
-			title: "Independent research and creative exploration",
-			period: "Parallel practice",
+			label: "Practice",
+			title: "Inner Exploration & Yoga",
+			period: "Three Jewels, Brooklyn",
 			description:
-				"Writing, studying AI-human co-evolution, and exploring how culture should shape the next generation of tools.",
+				"Daily study of Advaita Vedanta philosophy, physical yoga, and the textures of offline community.",
 		},
 	],
 	interests: [
 		{
-			title: "AI and human co-evolution",
+			title: "Advaita Vedanta & Non-Dualism",
 			description:
-				"Less hype, more questions about cognition, responsibility, and augmentation.",
+				"Exploring ancient consciousness and the philosophy that all existence is one cosmic self.",
 		},
 		{
 			title: "Cinema and visual storytelling",
@@ -190,7 +190,7 @@ export const aboutPageContent: AboutPageContent = {
 
 export const blogPageContent: BlogPageContent = {
 	seo: {
-		title: "Writing | Vishal Sharma",
+		title: "Writing | Vishal Ramanand Sharma",
 		description:
 			"Notes and essays on software, AI, systems, and the cultural texture around technology.",
 		image: identity.logo,

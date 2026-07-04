@@ -1,12 +1,7 @@
-import { escape } from 'html-escaper';
-import { Traverse } from 'neotraverse/modern';
-import * as z from 'zod/v4';
-import { d as renderElement, g as generateCspDigest, s as spreadAttributes, u as unescapeHTML, b as renderTemplate, e as removeBase, i as isRemotePath, A as AstroError, R as RenderUndefinedEntryError, U as UnknownContentCollectionError, p as prependForwardSlash, f as createHeadAndContent, r as renderComponent } from './entrypoint_g1RJS6Va.mjs';
-import { c as createComponent } from './astro-component_DTw8jYA1.mjs';
+import { d as renderElement, g as generateCspDigest, s as spreadAttributes, u as unescapeHTML, b as renderTemplate, e as removeBase, i as isRemotePath, f as unflatten, o as object, h as date, j as array, A as AstroError, R as RenderUndefinedEntryError, U as UnknownContentCollectionError, k as escape, l as string, p as prependForwardSlash, n as createHeadAndContent, r as renderComponent } from './entrypoint_W1m1O1Ua.mjs';
+import { c as createComponent } from './astro-component_C1lIWveE.mjs';
 import 'clsx';
 import { V as VALID_INPUT_FORMATS } from './consts_Bd-1c2lz.mjs';
-import 'piccolore';
-import * as devalue from 'devalue';
 
 function renderScriptElement({ props, children }) {
   return renderElement("script", {
@@ -24,6 +19,8 @@ function renderUniqueStylesheet(result, sheet) {
     return renderElement("style", { props: {}, children: sheet.content });
   }
 }
+
+var e=e=>Object.prototype.toString.call(e),t=e=>ArrayBuffer.isView(e)&&!(e instanceof DataView),o=t=>"[object Date]"===e(t),n=t=>"[object RegExp]"===e(t),r=t=>"[object Error]"===e(t),s=t=>"[object Boolean]"===e(t),l=t=>"[object Number]"===e(t),i=t=>"[object String]"===e(t),c=Array.isArray,u=Object.getOwnPropertyDescriptor,a=Object.prototype.propertyIsEnumerable,f=Object.getOwnPropertySymbols,p=Object.prototype.hasOwnProperty,h=Object.keys;function d(e){const t=h(e),o=f(e);for(let n=0;n<o.length;n++)a.call(e,o[n])&&t.push(o[n]);return t}function b(e,t){return !u(e,t)?.writable}function y(e,u){if("object"==typeof e&&null!==e){let a;if(c(e))a=[];else if(o(e))a=new Date(e.getTime?e.getTime():e);else if(n(e))a=new RegExp(e);else if(r(e))a={message:e.message};else if(s(e)||l(e)||i(e))a=Object(e);else {if(t(e))return e.slice();a=Object.create(Object.getPrototypeOf(e));}const f=u.includeSymbols?d:h;for(const t of f(e))a[t]=e[t];return a}return e}var g={includeSymbols:false,immutable:false};function m(e,t,o=g){const n=[],r=[];let s=true;const l=o.includeSymbols?d:h,i=!!o.immutable;return function e(u){const a=i?y(u,o):u,f={};let h=true;const d={node:a,node_:u,path:[].concat(n),parent:r[r.length-1],parents:r,key:n[n.length-1],isRoot:0===n.length,level:n.length,circular:void 0,isLeaf:false,notLeaf:true,notRoot:true,isFirst:false,isLast:false,update:function(e,t=false){d.isRoot||(d.parent.node[d.key]=e),d.node=e,t&&(h=false);},delete:function(e){delete d.parent.node[d.key],e&&(h=false);},remove:function(e){c(d.parent.node)?d.parent.node.splice(d.key,1):delete d.parent.node[d.key],e&&(h=false);},keys:null,before:function(e){f.before=e;},after:function(e){f.after=e;},pre:function(e){f.pre=e;},post:function(e){f.post=e;},stop:function(){s=false;},block:function(){h=false;}};if(!s)return d;function g(){if("object"==typeof d.node&&null!==d.node){d.keys&&d.node_===d.node||(d.keys=l(d.node)),d.isLeaf=0===d.keys.length;for(let e=0;e<r.length;e++)if(r[e].node_===u){d.circular=r[e];break}}else d.isLeaf=true,d.keys=null;d.notLeaf=!d.isLeaf,d.notRoot=!d.isRoot;}g();const m=t(d,d.node);if(void 0!==m&&d.update&&d.update(m),f.before&&f.before(d,d.node),!h)return d;if("object"==typeof d.node&&null!==d.node&&!d.circular){r.push(d),g();for(const[t,o]of Object.entries(d.keys??[])){n.push(o),f.pre&&f.pre(d,d.node[o],o);const r=e(d.node[o]);i&&p.call(d.node,o)&&!b(d.node,o)&&(d.node[o]=r.node),r.isLast=!!d.keys?.length&&+t==d.keys.length-1,r.isFirst=0==+t,f.post&&f.post(d,r),n.pop();}r.pop();}return f.after&&f.after(d,d.node),d}(e).node}var j=class{#e;#t;constructor(e,t=g){this.#e=e,this.#t=t;}get(e){let t=this.#e;for(let o=0;t&&o<e.length;o++){const n=e[o];if(!p.call(t,n)||!this.#t.includeSymbols&&"symbol"==typeof n)return;t=t[n];}return t}has(e){let t=this.#e;for(let o=0;t&&o<e.length;o++){const n=e[o];if(!p.call(t,n)||!this.#t.includeSymbols&&"symbol"==typeof n)return  false;t=t[n];}return  true}set(e,t){let o=this.#e,n=0;for(n=0;n<e.length-1;n++){const t=e[n];p.call(o,t)||(o[t]={}),o=o[t];}return o[e[n]]=t,t}map(e){return m(this.#e,e,{immutable:true,includeSymbols:!!this.#t.includeSymbols})}forEach(e){return this.#e=m(this.#e,e,this.#t),this.#e}reduce(e,t){const o=1===arguments.length;let n=o?this.#e:t;return this.forEach(((t,r)=>{t.isRoot&&o||(n=e(t,n,r));})),n}paths(){const e=[];return this.forEach((t=>{e.push(t.path);})),e}nodes(){const e=[];return this.forEach((t=>{e.push(t.node);})),e}clone(){const e=[],o=[],n=this.#t;return t(this.#e)?this.#e.slice():function t(r){for(let t=0;t<e.length;t++)if(e[t]===r)return o[t];if("object"==typeof r&&null!==r){const s=y(r,n);e.push(r),o.push(s);const l=n.includeSymbols?d:h;for(const e of l(r))s[e]=t(r[e]);return e.pop(),o.pop(),s}return r}(this.#e)}};
 
 function createSvgComponent({ meta, attributes, children, styles }) {
   const hasStyles = styles.length > 0;
@@ -116,11 +113,11 @@ class ImmutableDataStore {
    */
   static async fromModule() {
     try {
-      const data = await import('./_astro_data-layer-content_DcZKl_MW.mjs');
+      const data = await import('./_astro_data-layer-content_wyveT3sX.mjs');
       if (data.default instanceof Map) {
         return ImmutableDataStore.fromMap(data.default);
       }
-      const map = devalue.unflatten(data.default);
+      const map = unflatten(data.default);
       return ImmutableDataStore.fromMap(map);
     } catch {
     }
@@ -148,9 +145,9 @@ function dataStoreSingleton() {
 }
 const globalDataStore = dataStoreSingleton();
 
-z.object({
-  tags: z.array(z.string()).optional(),
-  lastModified: z.date().optional()
+object({
+  tags: array(string()).optional(),
+  lastModified: date().optional()
 });
 function createGetCollection({
   liveCollections
@@ -268,7 +265,7 @@ const CONTENT_LAYER_IMAGE_REGEX = /__ASTRO_IMAGE_="([^"]+)"/g;
 async function updateImageReferencesInBody(html, fileName) {
   const { default: imageAssetMap } = await import('./content-assets_DleWbedO.mjs');
   const imageObjects = /* @__PURE__ */ new Map();
-  const { getImage } = await import('./_astro_assets_DAtADJhl.mjs').then(n => n._);
+  const { getImage } = await import('./_astro_assets_Mpk8AsoT.mjs').then(n => n._);
   for (const [_full, imagePath] of html.matchAll(CONTENT_LAYER_IMAGE_REGEX)) {
     try {
       const decodedImagePath = JSON.parse(imagePath.replaceAll("&#x22;", '"'));
@@ -304,7 +301,7 @@ async function updateImageReferencesInBody(html, fileName) {
   });
 }
 function updateImageReferencesInData(data, fileName, imageAssetMap) {
-  return new Traverse(data).map(function(ctx, val) {
+  return new j(data).map(function(ctx, val) {
     if (typeof val === "string" && val.startsWith(IMAGE_IMPORT_PREFIX)) {
       const src = val.replace(IMAGE_IMPORT_PREFIX, "");
       const id = imageSrcToImportId(src, fileName);

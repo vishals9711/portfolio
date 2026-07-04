@@ -2,7 +2,7 @@
 title: "On Making Software Feel Intentional"
 pubDate: 2024-11-12
 description: "A short note on why product quality lives in the seams between engineering, copy, and interaction design."
-author: "Vishal Sharma"
+author: "Vishal Ramanand Sharma"
 image: { url: "/demo-1.jpg", alt: "Abstract system composition" }
 ---
 

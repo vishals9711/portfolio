@@ -1,4 +1,6 @@
 ---
+import { identity } from "../../config";
+
 interface Props {
 	className?: string;
 	title?: string;
@@ -16,13 +18,13 @@ const { className = "", title = "Future signal artwork" } = Astro.props;
 >
 	<defs>
 		<linearGradient id="signalStroke" x1="0" y1="0" x2="760" y2="640" gradientUnits="userSpaceOnUse">
-			<stop offset="0%" stop-color="hsl(168 89% 58%)"></stop>
-			<stop offset="55%" stop-color="hsl(45 93% 64%)"></stop>
-			<stop offset="100%" stop-color="hsl(168 89% 58%)"></stop>
+			<stop offset="0%" stop-color="#acafff"></stop>
+			<stop offset="55%" stop-color="#141414"></stop>
+			<stop offset="100%" stop-color="#acafff"></stop>
 		</linearGradient>
 		<linearGradient id="signalSoft" x1="40" y1="80" x2="660" y2="560" gradientUnits="userSpaceOnUse">
-			<stop offset="0%" stop-color="rgba(51, 255, 214, 0.24)"></stop>
-			<stop offset="100%" stop-color="rgba(255, 198, 87, 0.08)"></stop>
+			<stop offset="0%" stop-color="rgba(172, 175, 255, 0.24)"></stop>
+			<stop offset="100%" stop-color="rgba(20, 20, 20, 0.04)"></stop>
 		</linearGradient>
 		<filter id="coreGlow">
 			<feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
@@ -59,7 +61,7 @@ const { className = "", title = "Future signal artwork" } = Astro.props;
 	<g class="future-signal__text">
 		<text x="102" y="116">SYSTEM / TASTE / STRUCTURE</text>
 		<text x="102" y="550">BROOKLYN, NEW YORK</text>
-		<text x="542" y="116">VISHAL SHARMA</text>
+		<text x="658" y="116" text-anchor="end">{identity.name.toUpperCase()}</text>
 		<text x="534" y="550">INTENTIONAL SOFTWARE</text>
 		<text x="594" y="88">2026</text>
 	</g>

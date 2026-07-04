@@ -12,7 +12,7 @@ const { seo } = Astro.props;
 const pathname = Astro.url.pathname;
 ---
 
-<html lang="en" class="dark">
+<html lang="en" class="light">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -30,10 +30,6 @@ const pathname = Astro.url.pathname;
 	<body>
 		<div class="site-backdrop" aria-hidden="true">
 			<div class="site-grid"></div>
-			<div class="site-glow site-glow-a"></div>
-			<div class="site-glow site-glow-b"></div>
-			<div class="site-glow site-glow-c"></div>
-			<div class="site-glow site-glow-d"></div>
 		</div>
 
 		<SiteNav links={navBarLinks} pathname={pathname} />
@@ -47,7 +43,7 @@ const pathname = Astro.url.pathname;
 				<div class="footer-gradient-bar"></div>
 				<div class="footer-panel">
 					<div>
-						<p class="footer-kicker">Vishal Sharma</p>
+						<p class="footer-kicker">{identity.name}</p>
 						<h2 class="footer-title">{identity.role}</h2>
 					</div>
 					<div class="footer-meta">
@@ -67,23 +63,33 @@ const pathname = Astro.url.pathname;
 			</div>
 		</footer>
 
+		<script is:inline src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+		<script is:inline>
+			// @ts-ignore
+			const lenis = new Lenis();
+			function raf(time) {
+				lenis.raf(time);
+				requestAnimationFrame(raf);
+			}
+			requestAnimationFrame(raf);
+		</script>
 		<!-- Scroll reveal: IntersectionObserver for .reveal-on-scroll elements -->
-		<script>
+		<script is:inline>
 			(function () {
 				if (typeof IntersectionObserver === "undefined") return;
 				const observer = new IntersectionObserver(
-					(entries) => {
-						for (const entry of entries) {
-							if (entry.isIntersecting) {
-								entry.target.classList.add("is-visible");
-								observer.unobserve(entry.target);
+					function (entries) {
+						for (var i = 0; i < entries.length; i++) {
+							if (entries[i].isIntersecting) {
+								entries[i].target.classList.add("is-visible");
+								observer.unobserve(entries[i].target);
 							}
 						}
 					},
 					{ threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
 				);
-				const targets = document.querySelectorAll(".reveal-on-scroll");
-				for (const el of targets) observer.observe(el);
+				var targets = document.querySelectorAll(".reveal-on-scroll");
+				for (var j = 0; j < targets.length; j++) observer.observe(targets[j]);
 			})();
 		</script>
 	</body>

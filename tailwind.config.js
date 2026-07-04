@@ -57,7 +57,12 @@ const config = {
 				"4xl": "2rem",
 			},
 			fontFamily: {
-				sans: ["Geist Sans", "var(--font-sans)", "sans-serif"],
+				sans: [
+					"Inter Variable",
+					"Geist Sans",
+					"var(--font-sans)",
+					"sans-serif",
+				],
 				mono: ["Geist Mono", "monospace"],
 				grotesk: ["Space Grotesk", "sans-serif"],
 				satoshi: ["Satoshi", "sans-serif"],
